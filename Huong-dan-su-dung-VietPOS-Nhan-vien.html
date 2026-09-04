@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hướng dẫn sử dụng VietPOS — Nhân viên</title>
+  <style>
+    @page { size: A4; margin: 14mm 12mm; }
+    * { box-sizing: border-box; }
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, "Noto Sans", sans-serif;
+      font-size: 10pt;
+      line-height: 1.38;
+      color: #1a1a1a;
+      max-width: 186mm;
+      margin: 0 auto;
+    }
+    h1 { font-size: 17pt; margin: 0 0 3pt; color: #0f3d2e; }
+    h2 {
+      font-size: 12pt;
+      margin: 13pt 0 5pt;
+      padding-bottom: 2pt;
+      border-bottom: 1.5px solid #0f3d2e;
+      color: #0f3d2e;
+      page-break-after: avoid;
+    }
+    h3 { font-size: 10.5pt; margin: 8pt 0 3pt; color: #1f5c45; page-break-after: avoid; }
+    p, li { margin: 0 0 4pt; }
+    ol, ul { margin: 0 0 7pt; padding-left: 15pt; }
+    .meta { color: #555; font-size: 9pt; margin-bottom: 8pt; }
+    .box, .warn, .tip, .kbd-box {
+      border-radius: 6px;
+      padding: 6pt 8pt;
+      margin: 5pt 0 8pt;
+    }
+    .box { background: #f4f7f5; border: 1px solid #d0ddd6; }
+    .warn { background: #fff8e6; border: 1px solid #e8c96a; }
+    .tip { background: #eef6ff; border: 1px solid #b7d4f0; }
+    .kbd-box { background: #f7f7f7; border: 1px solid #ddd; font-size: 9pt; }
+    kbd {
+      display: inline-block;
+      padding: 0 4px;
+      border: 1px solid #bbb;
+      border-radius: 3px;
+      background: #f3f3f3;
+      font-size: 8.5pt;
+      font-family: ui-monospace, Menlo, monospace;
+    }
+    figure {
+      margin: 6pt 0 10pt;
+      page-break-inside: avoid;
+    }
+    figure img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ccd6d0;
+      border-radius: 4px;
+      display: block;
+    }
+    figcaption {
+      font-size: 8.5pt;
+      color: #555;
+      margin-top: 3pt;
+      text-align: center;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 5pt 0 9pt;
+      font-size: 9pt;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 3pt 5pt;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: #e8f0ec; }
+    .footer {
+      margin-top: 14pt;
+      padding-top: 5pt;
+      border-top: 1px solid #ccc;
+      font-size: 8pt;
+      color: #666;
+    }
+    .cover-sub { font-size: 11pt; color: #444; margin-bottom: 2pt; }
+    .toc { font-size: 9.5pt; columns: 2; column-gap: 16pt; margin: 6pt 0 10pt; }
+    .toc ol { margin: 0; padding-left: 16pt; }
+    .toc li { break-inside: avoid; margin-bottom: 2pt; }
+  </style>
+</head>
+<body>
+
+  <h1>Hướng dẫn sử dụng VietPOS</h1>
+  <p class="cover-sub">Dành cho <strong>nhân viên bán hàng</strong> (thu ngân / quầy)</p>
+  <p class="meta">Phiên bản hướng dẫn: 1.2 · Ngày: 04/09/2026 · Có kèm ảnh chụp màn hình đầy đủ luồng bán hàng</p>
+
+  <div class="box">
+    Tài liệu giúp bạn: đăng nhập → mở ca → thêm SP / giỏ hàng → checkout → chọn thanh toán / in bill →
+    đề nghị hủy đơn → xem đơn trong ca → tồn kho → offline → đăng xuất (đóng ca).
+    Ảnh chụp từ tài khoản <strong>staff</strong> trên môi trường demo.
+  </div>
+
+  <div class="toc">
+    <ol>
+      <li>Đăng nhập</li>
+      <li>Màn hình sau đăng nhập</li>
+      <li>Mở ca làm việc</li>
+      <li>Bán hàng tại POS (chi tiết)</li>
+      <li>Hóa đơn sau checkout</li>
+      <li>Đề nghị hủy đơn</li>
+      <li>Đơn hàng trong ca</li>
+      <li>Tồn kho &amp; sản phẩm</li>
+      <li>Phiếu nhập / xuất</li>
+      <li>Offline</li>
+      <li>Đăng xuất &amp; đóng ca</li>
+      <li>Phím tắt</li>
+      <li>Nhiều quầy</li>
+      <li>Sự cố thường gặp</li>
+      <li>Quy tắc làm việc</li>
+    </ol>
+  </div>
+
+  <h2>1. Đăng nhập</h2>
+  <ol>
+    <li>Mở app <strong>VietPOS</strong> (máy tính quầy) hoặc trình duyệt theo hướng dẫn cửa hàng.</li>
+    <li>Nhập <strong>email</strong> và <strong>mật khẩu</strong> do quản lý cấp → bấm <strong>Đăng nhập</strong>.</li>
+    <li>Máy đã từng đăng nhập: có thể chọn tài khoản trong «Tài khoản trên máy này».</li>
+  </ol>
+
+  <figure>
+    <img src="images/user-guide-staff/01-login.png" alt="Màn hình đăng nhập VietPOS" />
+    <figcaption>Hình 1 — Màn hình đăng nhập</figcaption>
+  </figure>
+
+  <div class="warn">
+    <strong>Offline:</strong> không đăng nhập tài khoản mới được. Cần có mạng lần đầu trên mỗi máy.
+  </div>
+  <div class="tip">Không chia sẻ mật khẩu. Quên mật khẩu → báo quản lý.</div>
+
+  <h2>2. Màn hình sau khi đăng nhập</h2>
+  <p>
+    Sau đăng nhập bạn thấy menu trái và Dashboard. Nhân viên thường có:
+    <strong>Dashboard</strong>, <strong>POS</strong>, <strong>Sản phẩm</strong>, <strong>Tồn kho</strong>,
+    <strong>Phiếu nhập/xuất</strong>, <strong>Đơn hàng</strong>.
+  </p>
+  <p>Vào <strong>POS</strong> để bán hàng.</p>
+
+  <figure>
+    <img src="images/user-guide-staff/02-dashboard.png" alt="Dashboard VietPOS" />
+    <figcaption>Hình 2 — Dashboard (menu trái; nhân viên có thể thấy ít mục hơn admin)</figcaption>
+  </figure>
+
+  <h2>3. Mở ca làm việc</h2>
+  <p>Trước khi bán: <strong>mở ca</strong> và chọn <strong>NV bán hàng (NV ca)</strong> để doanh thu ghi đúng người.</p>
+  <ol>
+    <li>Vào menu <strong>POS</strong>.</li>
+    <li>Hộp thoại «Chọn nhân viên trong ca» hiện ra → tick ít nhất một NV → <strong>Xác nhận</strong>.</li>
+    <li>Thanh trên POS hiện <em>NV ca: …</em> — lúc này mới bán được.</li>
+  </ol>
+
+  <figure>
+    <img src="images/user-guide-staff/03c-pos-sau-mo-ca.png" alt="POS sau khi mở ca" />
+    <figcaption>Hình 3 — POS sau khi mở ca (thanh «NV ca» phía trên)</figcaption>
+  </figure>
+
+  <div class="warn">
+    Nếu không có NV trong danh sách: báo admin thêm tại mục <strong>NV bán hàng</strong>, trạng thái <em>Đang làm</em>.
+    Không chọn NV → doanh thu không phân bổ đúng.
+  </div>
+
+  <h2>4. Bán hàng tại POS</h2>
+
+  <h3>4.1. Bố cục màn POS</h3>
+  <ul>
+    <li><strong>Trái:</strong> quét barcode, tìm SP, duyệt lưới sản phẩm; tab nhiều hóa đơn (+).</li>
+    <li><strong>Phải:</strong> giỏ hàng, chỉnh số lượng, nút <strong>Checkout</strong>.</li>
+    <li>Bill in tự động khi checkout (nếu máy in sẵn sàng).</li>
+  </ul>
+
+  <h3>4.2. Thêm sản phẩm</h3>
+  <ol>
+    <li><strong>Quét barcode</strong> vào ô «Quét barcode…» (nhanh nhất).</li>
+    <li>Hoặc gõ tên / mã vào «Tìm tên, mã…» rồi chọn kết quả.</li>
+    <li>Hoặc bấm <strong>Duyệt SP</strong> → bấm thẻ sản phẩm trên lưới.</li>
+    <li>Chỉnh số lượng bằng nút <strong>+</strong> / <strong>−</strong> trên từng dòng giỏ.</li>
+    <li>Dùng tab «Hoá đơn» + nút <strong>+</strong> nếu phục vụ nhiều khách cùng lúc.</li>
+  </ol>
+
+  <figure>
+    <img src="images/user-guide-staff/04-pos-duyet-sp.png" alt="Duyệt sản phẩm trên POS" />
+    <figcaption>Hình 4 — Bật «Duyệt SP» để chọn từ lưới</figcaption>
+  </figure>
+
+  <figure>
+    <img src="images/user-guide-staff/04b-pos-gio-hang.png" alt="Giỏ hàng có sản phẩm" />
+    <figcaption>Hình 5 — Giỏ hàng đã có món (badge số lượng trên thẻ SP; tổng trên nút Checkout)</figcaption>
+  </figure>
+
+  <figure>
+    <img src="images/user-guide-staff/04d-pos-tim-kiem.png" alt="Tìm sản phẩm theo mã" />
+    <figcaption>Hình 6 — Tìm theo mã / tên (ví dụ MK001)</figcaption>
+  </figure>
+
+  <div class="warn">
+    Badge đỏ <strong>Tồn âm</strong> / cảnh báo «Bán vượt tồn»: vẫn có thể bán theo cấu hình shop —
+    nên báo quản lý nếu tồn âm kéo dài. Không tự ý xóa dữ liệu để «sửa» tồn.
+  </div>
+
+  <h3>4.3. Checkout</h3>
+  <ol>
+    <li>Kiểm tra món, số lượng, tổng tiền trên giỏ.</li>
+    <li>Bấm <strong>Checkout — … đ</strong> (hoặc <kbd>Alt</kbd>+<kbd>5</kbd>).</li>
+    <li>Hệ thống lưu đơn, mở cửa sổ <strong>Hóa Đơn / Receipt</strong>, đồng bộ lên máy chủ (nếu có mạng).</li>
+  </ol>
+
+  <h2>5. Hóa đơn sau checkout</h2>
+  <p>Cửa sổ hóa đơn có hai phần: thao tác bên trái, xem trước bill bên phải.</p>
+
+  <h3>5.1. Chọn hình thức thanh toán</h3>
+  <ul>
+    <li><strong>Tiền mặt</strong> — <kbd>Alt</kbd>+<kbd>1</kbd></li>
+    <li><strong>Thẻ</strong> — <kbd>Alt</kbd>+<kbd>2</kbd></li>
+    <li><strong>Chuyển khoản</strong> — <kbd>Alt</kbd>+<kbd>3</kbd> (có thể cần chụp chứng từ theo cấu hình shop)</li>
+  </ul>
+
+  <h3>5.2. Ghi chú, GTGT, chứng từ SP</h3>
+  <ul>
+    <li><strong>Ghi chú</strong> (<kbd>Alt</kbd>+<kbd>6</kbd>): lý do giảm giá, yêu cầu khách…</li>
+    <li><strong>Xuất hóa đơn GTGT</strong> (<kbd>Alt</kbd>+<kbd>5</kbd>): tick khi khách cần HĐ công ty — điền đúng MST / tên.</li>
+    <li><strong>Chụp ảnh chứng từ sản phẩm</strong> (<kbd>Alt</kbd>+<kbd>9</kbd>): khi shop yêu cầu lưu ảnh hàng.</li>
+  </ul>
+
+  <h3>5.3. In bill</h3>
+  <p>
+    Bill thường in tự động sau checkout. Nếu chưa in (máy in tắt / chưa kết nối), hệ thống sẽ nhắc
+    <strong>in lại</strong> khi có máy in. Kiểm tra giấy, cáp USB, nguồn máy in trước khi báo kỹ thuật.
+  </p>
+
+  <figure>
+    <img src="images/user-guide-staff/05-bill-sau-checkout.png" alt="Hóa đơn sau checkout" />
+    <figcaption>Hình 7 — Sau checkout: chọn PT thanh toán, xem trước bill, đóng bằng «Đóng» / Esc</figcaption>
+  </figure>
+
+  <div class="tip">
+    Toast «Đã lưu đơn hàng» / «đang đồng bộ» là bình thường. Đóng cửa sổ bằng <strong>Đóng</strong> hoặc <kbd>Esc</kbd> để bán đơn tiếp.
+  </div>
+
+  <h2>6. Đề nghị hủy đơn</h2>
+  <p>
+    Nhân viên <strong>không tự hủy xong</strong> — gửi <strong>đề nghị hủy</strong> kèm lý do để quản lý duyệt.
+    Khi duyệt, tồn kho được hoàn theo quy trình.
+  </p>
+  <ol>
+    <li>Mở hóa đơn vừa bán (ngay sau checkout) hoặc mở lại đơn trong menu <strong>Đơn hàng</strong>.</li>
+    <li>Ở mục <strong>Đề nghị huỷ đơn</strong> (<kbd>Alt</kbd>+<kbd>4</kbd>), chọn lý do:
+      <em>Khách đổi ý</em> / <em>Khách không đủ tiền</em> / <em>Khác</em> (ghi rõ).</li>
+    <li>Bấm <strong>Gửi đề nghị huỷ</strong>.</li>
+    <li>Theo dõi tab <strong>Đề nghị huỷ</strong> trong Đơn hàng; chờ quản lý duyệt.</li>
+  </ol>
+
+  <figure>
+    <img src="images/user-guide-staff/06-de-nghi-huy.png" alt="Đề nghị hủy đơn trên hóa đơn" />
+    <figcaption>Hình 8 — Đề nghị hủy trên màn Hóa đơn (lý do + «Gửi đề nghị huỷ»)</figcaption>
+  </figure>
+
+  <div class="warn">Không hủy / sửa đơn ngoài quy trình. Sai sót lớn → ghi giờ + số HĐ + báo quản lý ngay.</div>
+
+  <h2>7. Đơn hàng trong ca</h2>
+  <p>
+    Menu <strong>Đơn hàng</strong>: xem đơn trong ca hiện tại (thường lọc <em>Hôm nay</em>).
+    Tab: Hoàn thành · Đề nghị huỷ · Đơn huỷ · Ghi chú.
+  </p>
+  <ul>
+    <li>In lại bill (biểu tượng máy in trên dòng đơn).</li>
+    <li>Thêm / sửa ghi chú nếu được phép.</li>
+    <li>Cuối danh sách có tổng doanh thu ca (tiền mặt / thẻ…).</li>
+  </ul>
+
+  <figure>
+    <img src="images/user-guide-staff/07-orders.png" alt="Màn đơn hàng" />
+    <figcaption>Hình 9 — Đơn hàng trong ca (tóm tắt doanh thu phía dưới)</figcaption>
+  </figure>
+
+  <h2>8. Tồn kho &amp; sản phẩm</h2>
+  <p>Xem số lượng còn và danh mục hàng. Giá vốn / một số cột nhạy cảm có thể ẩn với nhân viên.</p>
+
+  <figure>
+    <img src="images/user-guide-staff/08-inventory.png" alt="Màn tồn kho" />
+    <figcaption>Hình 10 — Tồn kho</figcaption>
+  </figure>
+
+  <figure>
+    <img src="images/user-guide-staff/09-products.png" alt="Màn sản phẩm" />
+    <figcaption>Hình 11 — Danh mục sản phẩm (thường chỉ xem; chi nhánh chính mới sửa)</figcaption>
+  </figure>
+
+  <h2>9. Phiếu nhập / xuất</h2>
+  <p>
+    Xem hoặc tạo phiếu theo quy trình cửa hàng. Duyệt phiếu thường do quản lý / thủ kho.
+    Badge đỏ trên menu = có phiếu chờ xử lý (tùy quyền).
+  </p>
+
+  <figure>
+    <img src="images/user-guide-staff/10-stock-requests.png" alt="Phiếu nhập xuất" />
+    <figcaption>Hình 12 — Phiếu nhập/xuất</figcaption>
+  </figure>
+
+  <h2>10. Làm việc khi mất mạng (offline)</h2>
+  <div class="box">
+    Banner vàng trên cùng: «Không có mạng — chế độ offline» hoặc «Không kết nối được máy chủ…».
+    Vẫn bán được: đơn lưu trên máy quầy, có mạng sẽ tự đồng bộ. Thanh NV ca có thể hiện badge <em>offline</em>.
+  </div>
+
+  <figure>
+    <img src="images/user-guide-staff/11-offline-banner.png" alt="Banner offline trên POS" />
+    <figcaption>Hình 13 — Banner offline trên POS</figcaption>
+  </figure>
+
+  <div class="warn">
+    Nhiều quầy offline cùng bán 1 SP có thể conflict khi sync — báo quản lý, <strong>không xóa</strong> dữ liệu trên máy.
+    Giữ máy bật đến khi banner hết / hết «chờ đồng bộ».
+  </div>
+
+  <h2>11. Đăng xuất &amp; đóng ca</h2>
+  <ol>
+    <li>Kiểm tra Đơn hàng trong ca (doanh thu, đề nghị hủy còn treo).</li>
+    <li>Bấm <strong>Đăng xuất</strong> ở cuối menu trái (hoặc khu vực tài khoản).</li>
+    <li>Hệ thống <strong>đóng phiên ca</strong> trên máy chủ khi còn mạng — nên đăng xuất khi còn mạng.</li>
+  </ol>
+
+  <figure>
+    <img src="images/user-guide-staff/12-dashboard-dang-xuat.png" alt="Vị trí đăng xuất" />
+    <figcaption>Hình 14 — Nút «Đăng xuất» ở cuối sidebar (đóng ca kèm theo)</figcaption>
+  </figure>
+
+  <div class="warn">Không tắt máy giữa chừng khi còn đơn chờ đồng bộ. Hết ca → đăng xuất gọn, bàn giao quầy.</div>
+
+  <h2>12. Phím tắt thường dùng (POS / hóa đơn)</h2>
+  <div class="kbd-box">
+    <table>
+      <thead>
+        <tr><th>Phím</th><th>Chức năng</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><kbd>Alt</kbd>+<kbd>5</kbd></td><td>Checkout (khi đang ở POS)</td></tr>
+        <tr><td><kbd>Alt</kbd>+<kbd>1</kbd> / <kbd>2</kbd> / <kbd>3</kbd></td><td>Tiền mặt / Thẻ / Chuyển khoản (trên hóa đơn)</td></tr>
+        <tr><td><kbd>Alt</kbd>+<kbd>4</kbd></td><td>Gửi đề nghị hủy (với lý do đã chọn)</td></tr>
+        <tr><td><kbd>Alt</kbd>+<kbd>6</kbd></td><td>Ghi chú đơn</td></tr>
+        <tr><td><kbd>Alt</kbd>+<kbd>9</kbd></td><td>Chứng từ ảnh sản phẩm</td></tr>
+        <tr><td><kbd>Esc</kbd></td><td>Đóng cửa sổ hóa đơn / hộp thoại</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>13. Nhiều quầy cùng lúc</h2>
+  <ul>
+    <li>Mỗi quầy: máy riêng + tài khoản đăng nhập riêng.</li>
+    <li>Mỗi người mở ca của mình, chọn đúng NV bán.</li>
+    <li>Ưu tiên bán khi có mạng; offline chỉ khi thật sự mất kết nối.</li>
+  </ul>
+
+  <h2>14. Sự cố thường gặp</h2>
+  <table>
+    <thead>
+      <tr><th>Hiện tượng</th><th>Việc nên làm</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Không đăng nhập được</td><td>Kiểm tra mạng, email/mật khẩu; báo admin</td></tr>
+      <tr><td>Không mở ca / thiếu NV</td><td>Báo admin cập nhật «NV bán hàng» (Đang làm)</td></tr>
+      <tr><td>Không tìm thấy SP</td><td>Đợi sync catalog; kiểm tra SP còn kinh doanh; thử Duyệt SP</td></tr>
+      <tr><td>Checkout không bấm được</td><td>Giỏ trống / thiếu ảnh chứng từ (nếu PT yêu cầu)</td></tr>
+      <tr><td>In bill không ra</td><td>Máy in, giấy, USB; dùng in lại trên hóa đơn / Đơn hàng</td></tr>
+      <tr><td>Banner offline / chờ sync</td><td>Giữ máy bật đến khi sync xong</td></tr>
+      <tr><td>Conflict khi sync</td><td>Báo quản lý xử lý — không xóa DB local</td></tr>
+      <tr><td>Thiết bị chưa duyệt</td><td>Báo admin duyệt thiết bị</td></tr>
+      <tr><td>Đề nghị hủy chưa duyệt</td><td>Nhắc quản lý; không bán lại cùng logic «xóa tay»</td></tr>
+    </tbody>
+  </table>
+
+  <h2>15. Quy tắc làm việc gọn</h2>
+  <ol>
+    <li>Đăng nhập → mở ca → chọn đúng NV bán.</li>
+    <li>Quét / tìm đúng SP → kiểm tra giỏ → Checkout.</li>
+    <li>Chọn đúng PT thanh toán; kiểm tra bill trước khi đưa khách.</li>
+    <li>Hủy đơn chỉ qua «Đề nghị huỷ» + lý do.</li>
+    <li>Hết ca: xem Đơn hàng → Đăng xuất khi còn mạng.</li>
+    <li>Không tự ý đổi giá / xóa dữ liệu ngoài quy trình.</li>
+    <li>Sự cố: ghi giờ + số HĐ + báo quản lý.</li>
+  </ol>
+
+  <div class="footer">
+    VietPOS — Hướng dẫn nhân viên v1.2 (luồng bán hàng đầy đủ + ảnh) · Ảnh minh họa từ môi trường demo.
+    Cấu hình máy in / tài khoản / quyền do quản lý cửa hàng cung cấp.
+  </div>
+
+</body>
+</html>
