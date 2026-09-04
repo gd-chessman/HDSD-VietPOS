@@ -2,341 +2,264 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <title>Hướng dẫn sử dụng VietPOS — Thủ kho</title>
-  <style>
-    @page { size: A4; margin: 14mm 12mm; }
-    * { box-sizing: border-box; }
-    body {
-      font-family: "Helvetica Neue", Helvetica, Arial, "Noto Sans", sans-serif;
-      font-size: 10pt;
-      line-height: 1.38;
-      color: #1a1a1a;
-      max-width: 186mm;
-      margin: 0 auto;
-    }
-    h1 { font-size: 17pt; margin: 0 0 3pt; color: #0f3d2e; }
-    h2 {
-      font-size: 12pt;
-      margin: 13pt 0 5pt;
-      padding-bottom: 2pt;
-      border-bottom: 1.5px solid #0f3d2e;
-      color: #0f3d2e;
-      page-break-after: avoid;
-    }
-    h3 { font-size: 10.5pt; margin: 8pt 0 3pt; color: #1f5c45; page-break-after: avoid; }
-    p, li { margin: 0 0 4pt; }
-    ol, ul { margin: 0 0 7pt; padding-left: 15pt; }
-    .meta { color: #555; font-size: 9pt; margin-bottom: 8pt; }
-    .box, .warn, .tip, .kbd-box {
-      border-radius: 6px;
-      padding: 6pt 8pt;
-      margin: 5pt 0 8pt;
-    }
-    .box { background: #f4f7f5; border: 1px solid #d0ddd6; }
-    .warn { background: #fff8e6; border: 1px solid #e8c96a; }
-    .tip { background: #eef6ff; border: 1px solid #b7d4f0; }
-    .kbd-box { background: #f7f7f7; border: 1px solid #ddd; font-size: 9pt; }
-    kbd {
-      display: inline-block;
-      padding: 0 4px;
-      border: 1px solid #bbb;
-      border-radius: 3px;
-      background: #f3f3f3;
-      font-size: 8.5pt;
-      font-family: ui-monospace, Menlo, monospace;
-    }
-    figure {
-      margin: 6pt 0 10pt;
-      page-break-inside: avoid;
-    }
-    figure img {
-      width: 100%;
-      max-width: 100%;
-      height: auto;
-      border: 1px solid #ccd6d0;
-      border-radius: 4px;
-      display: block;
-    }
-    figcaption {
-      font-size: 8.5pt;
-      color: #555;
-      margin-top: 3pt;
-      text-align: center;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 5pt 0 9pt;
-      font-size: 9pt;
-    }
-    th, td {
-      border: 1px solid #ccc;
-      padding: 3pt 5pt;
-      text-align: left;
-      vertical-align: top;
-    }
-    th { background: #e8f0ec; }
-    .footer {
-      margin-top: 14pt;
-      padding-top: 5pt;
-      border-top: 1px solid #ccc;
-      font-size: 8pt;
-      color: #666;
-    }
-    .cover-sub { font-size: 11pt; color: #444; margin-bottom: 2pt; }
-    .toc { font-size: 9.5pt; columns: 2; column-gap: 16pt; margin: 6pt 0 10pt; }
-    .toc ol { margin: 0; padding-left: 16pt; }
-    .toc li { break-inside: avoid; margin-bottom: 2pt; }
-    .nav { font-size: 9pt; margin-bottom: 8pt; color: #555; }
-    .nav a { color: #0f3d2e; }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hướng dẫn VietPOS — Thủ kho</title>
+  <link rel="stylesheet" href="assets/guide.css" />
 </head>
 <body>
+  <header class="topbar">
+    <button class="toc-toggle" type="button">Mục lục</button>
+    <a class="brand" href="index.html"><span class="mark">V</span> VietPOS HDSD</a>
+    <span class="role">Thủ kho</span>
+  </header>
 
-  <p class="nav"><a href="index.html">← Tất cả hướng dẫn</a> · <a href="Huong-dan-su-dung-VietPOS-Nhan-vien.html">Nhân viên bán hàng</a></p>
+  <div class="layout">
+    <aside class="sidebar">
+      <p class="sidebar-label">Tài liệu</p>
+      <nav class="guides">
+        <a href="Huong-dan-su-dung-VietPOS-Nhan-vien.html">Nhân viên bán hàng</a>
+        <a class="active" href="Huong-dan-su-dung-VietPOS-Thu-kho.html">Thủ kho</a>
+      </nav>
+      <p class="sidebar-label">Mục lục</p>
+      <nav class="toc">
+        <a href="#dang-nhap">1. Đăng nhập</a>
+        <a href="#menu">2. Menu của thủ kho</a>
+        <a href="#dashboard">3. Dashboard</a>
+        <a href="#ton-kho">4. Tồn kho</a>
+        <a href="#san-pham">5. Sản phẩm</a>
+        <a href="#phieu-kho">6. Phiếu nhập / xuất</a>
+        <a href="#tao-nhap">7. Tạo phiếu nhập</a>
+        <a href="#tao-xuat">8. Tạo phiếu xuất</a>
+        <a href="#duyet">9. Duyệt, vận chuyển, nhận</a>
+        <a href="#in-huy">10. In phiếu &amp; huỷ</a>
+        <a href="#chi-nhanh">11. CN chính vs CN con</a>
+        <a href="#mang">12. Mạng / thiết bị</a>
+        <a href="#su-co">13. Sự cố thường gặp</a>
+        <a href="#quy-tac">14. Quy tắc làm việc</a>
+      </nav>
+    </aside>
 
-  <h1>Hướng dẫn sử dụng VietPOS</h1>
-  <p class="cover-sub">Dành cho <strong>thủ kho</strong></p>
-  <p class="meta">Phiên bản hướng dẫn: 1.0 · Ngày: 04/09/2026 · Đối chiếu với quyền role <em>warehouse_keeper</em> trên VietPOS</p>
+    <main class="content">
+      <article class="article">
+        <h1>Hướng dẫn sử dụng VietPOS</h1>
+        <p class="cover-sub">Dành cho <strong>thủ kho</strong></p>
+        <p class="meta">Phiên bản 1.0 · 04/09/2026 · Đối chiếu quyền role warehouse_keeper</p>
 
-  <div class="box">
-    Thủ kho <strong>không bán hàng tại POS</strong> và <strong>không xem / hủy đơn</strong>.
-    Việc chính: theo dõi tồn kho, danh mục sản phẩm, và xử lý <strong>phiếu nhập / xuất</strong>
-    (tạo → duyệt / từ chối → vận chuyển → nhận hàng).
+        <div class="box">
+          Thủ kho <strong>không bán hàng tại POS</strong> và <strong>không xem / hủy đơn</strong>.
+          Việc chính: theo dõi tồn kho, danh mục sản phẩm, và xử lý <strong>phiếu nhập / xuất</strong>
+          (tạo → duyệt / từ chối → vận chuyển → nhận hàng).
+        </div>
+
+        <h2 id="dang-nhap">1. Đăng nhập</h2>
+        <ol>
+          <li>Mở app <strong>VietPOS</strong> hoặc trình duyệt theo hướng dẫn cửa hàng.</li>
+          <li>Nhập email / mật khẩu do quản lý cấp → <strong>Đăng nhập</strong>.</li>
+          <li>Máy đã từng đăng nhập: có thể chọn tài khoản trong «Tài khoản trên máy này».</li>
+        </ol>
+        <figure>
+          <img src="images/user-guide-staff/01-login.png" alt="Màn hình đăng nhập VietPOS" />
+          <figcaption>Hình 1 — Màn hình đăng nhập (chung cho mọi vai trò)</figcaption>
+        </figure>
+        <div class="warn">
+          Đăng nhập lần đầu trên máy mới <strong>cần mạng</strong>. Quên mật khẩu → báo quản lý, không dùng chung tài khoản.
+        </div>
+
+        <h2 id="menu">2. Menu của thủ kho</h2>
+        <p>Sau đăng nhập, sidebar hiện vai trò <strong>Thủ kho</strong>. Các mục bạn dùng:</p>
+        <table>
+          <thead>
+            <tr><th>Menu</th><th>Dùng để</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Dashboard</td><td>Xem nhanh số liệu cửa hàng (doanh thu, sắp hết hàng…)</td></tr>
+            <tr><td>Sản phẩm</td><td>Xem danh mục; thêm / import nếu làm tại chi nhánh chính</td></tr>
+            <tr><td>Tồn kho</td><td>Xem số lượng; chọn SP sắp hết để tạo phiếu nhập</td></tr>
+            <tr><td>Phiếu nhập/xuất</td><td>Công việc chính — badge đỏ = phiếu chờ xử lý</td></tr>
+          </tbody>
+        </table>
+        <div class="warn">
+          Thủ kho <strong>không có</strong> POS, Đơn hàng, Hóa đơn VAT, Nhân viên, Thống kê, Báo cáo NV, Chuỗi CH.
+        </div>
+
+        <h2 id="dashboard">3. Dashboard</h2>
+        <p>
+          Trang chủ sau đăng nhập. Dùng để nắm tình hình (đơn hôm nay, hàng sắp hết).
+          Bán hàng và xử lý bill do nhân viên quầy làm trên POS — thủ kho không checkout.
+        </p>
+        <div class="tip">Hàng sắp hết trên Dashboard → vào <strong>Tồn kho</strong> lọc «Tồn ≤ 5» rồi tạo phiếu nhập.</div>
+
+        <h2 id="ton-kho">4. Tồn kho</h2>
+        <p>Menu <strong>Tồn kho</strong> — theo dõi số lượng, không hiện giá bán / giá vốn với thủ kho.</p>
+        <ul>
+          <li>Thẻ: tổng số lượng tồn · số mặt hàng (SKU) · sắp hết hàng (≤ 5).</li>
+          <li>Ô «Tìm kiếm sản phẩm…» theo tên / mã.</li>
+          <li>Lọc tồn: Tất cả · Tồn ≤ 5 / 10 / 15.</li>
+          <li>Cột: ảnh, mã SP, tên, tồn kho (dòng sắp hết tô vàng + chữ «sắp hết»).</li>
+        </ul>
+        <h3>4.1. Tạo phiếu nhập từ tồn kho</h3>
+        <ol>
+          <li>Tick các mặt hàng cần nhập (hoặc chọn tất cả trên trang lọc).</li>
+          <li>Bấm <strong>Tạo phiếu nhập (n)</strong> — hệ thống gợi ý số lượng (hàng ≤ 5 được đề xuất bù).</li>
+          <li>Kiểm tra dòng hàng / SL → gửi phiếu (xem mục 7).</li>
+        </ol>
+        <div class="warn">Cần mạng để tạo phiếu từ tồn kho. Mất mạng thì nút bị khóa.</div>
+        <div class="tip">
+          Nếu bạn ở <strong>kho tổng / chi nhánh chính</strong>: có thể chọn xem tồn chi nhánh khác (chỉ xem, badge «Chỉ xem»).
+          Tạo phiếu nhập chỉ khi đang xem <em>chi nhánh của bạn</em>.
+        </div>
+
+        <h2 id="san-pham">5. Sản phẩm</h2>
+        <p>Menu <strong>Sản phẩm</strong> — xem danh mục (tên, mã, ĐVT, VAT%, giá bán, tồn, trạng thái).</p>
+        <ul>
+          <li><strong>Giá vốn bị ẩn</strong> với thủ kho.</li>
+          <li><strong>Sửa giá / ngừng kinh doanh</strong> do admin hoặc quản lý tại chi nhánh chính.</li>
+          <li>Nếu làm tại <strong>chi nhánh chính</strong> (kho tổng): có thể <strong>Thêm sản phẩm</strong> và <strong>Import Excel</strong>.</li>
+          <li>Chi nhánh con: thường chỉ xem. SP của CN khác ghi «Sản phẩm chi nhánh khác — chỉ xem».</li>
+        </ul>
+        <div class="warn">Không tự ý đổi giá ngoài quy trình. Sai mã / tồn → báo quản lý, không xóa dữ liệu.</div>
+
+        <h2 id="phieu-kho">6. Phiếu nhập / xuất — tổng quan</h2>
+        <p>
+          Menu <strong>Phiếu nhập/xuất</strong>. Mỗi phiếu có <strong>Từ CN → Đến CN</strong>.
+          Badge đỏ trên menu = số phiếu đang chờ bạn xử lý.
+        </p>
+        <table>
+          <thead>
+            <tr><th>Trạng thái</th><th>Ý nghĩa</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Chờ duyệt</td><td>Mới tạo, chưa duyệt</td></tr>
+            <tr><td>Đã duyệt</td><td>Đã chấp nhận — chờ bên gửi bấm Vận chuyển</td></tr>
+            <tr><td>Đang vận chuyển</td><td>Đã trừ tồn bên gửi — chờ bên nhận xác nhận</td></tr>
+            <tr><td>Hoàn thành</td><td>Đã cộng tồn bên nhận</td></tr>
+            <tr><td>Từ chối / Đã huỷ</td><td>Không điều chuyển</td></tr>
+          </tbody>
+        </table>
+        <p>Lọc: khoảng ngày · loại (Tất cả / Phiếu nhập / Phiếu xuất) · trạng thái. Bấm mũi tên trên dòng để xem chi tiết SP và lịch sử.</p>
+
+        <h2 id="tao-nhap">7. Tạo phiếu nhập</h2>
+        <p>Nút xanh <strong>Tạo phiếu nhập</strong>. Nhập = hàng về chi nhánh đích từ kho tổng (hoặc kho tổng tạo hộ).</p>
+        <h3>7.1. Bạn ở chi nhánh con</h3>
+        <ol>
+          <li>Mở «Tạo phiếu nhập kho» — banner: <em>Kho tổng → chi nhánh của bạn</em>.</li>
+          <li>Thêm sản phẩm (hàng sắp hết hiện trước). Cột «Tồn kho chính» = còn ở kho tổng.</li>
+          <li>SL không được lớn hơn tồn kho chính.</li>
+          <li>Ghi chú nếu cần → tạo phiếu.</li>
+          <li>Bạn <strong>không tự duyệt</strong> phiếu nhập mình xin — kho tổng duyệt và vận chuyển.</li>
+        </ol>
+        <h3>7.2. Bạn ở kho tổng / chi nhánh chính</h3>
+        <ol>
+          <li>Chọn <strong>Chi nhánh gửi hàng</strong> (hàng đi từ CN đó về kho tổng).</li>
+          <li>SL không vượt tồn chi nhánh gửi.</li>
+          <li>Tạo xong: bên gửi (CN nguồn) duyệt / vận chuyển theo quy trình.</li>
+        </ol>
+
+        <h2 id="tao-xuat">8. Tạo phiếu xuất</h2>
+        <p>Nút cam <strong>Tạo phiếu xuất</strong>. Xuất = hàng đi từ chi nhánh bạn sang CN / kho tổng khác.</p>
+        <ol>
+          <li>Chọn <strong>Chi nhánh / kho nhận hàng</strong>.</li>
+          <li>Thêm SP; SL không vượt tồn hiện tại (ô hiện «Tối đa …»).</li>
+          <li>Có cột tồn chi nhánh nhận để đối chiếu.</li>
+          <li>Tạo phiếu. <strong>Bên gửi không tự duyệt</strong> — chi nhánh nhận duyệt. Sau đó bên gửi bấm <strong>Vận chuyển</strong> (trừ tồn nguồn).</li>
+        </ol>
+
+        <h2 id="duyet">9. Duyệt, vận chuyển, nhận hàng</h2>
+        <p>Nút hiện đúng vai trò của chi nhánh bạn trên phiếu đó.</p>
+        <h3>9.1. Duyệt / Từ chối (trạng thái Chờ duyệt)</h3>
+        <table>
+          <thead>
+            <tr><th>Loại phiếu</th><th>Ai được duyệt</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Nhập kho</td><td>Bên <strong>gửi</strong> (kho tổng khi CN con xin nhập). CN nhận không tự duyệt.</td></tr>
+            <tr><td>Xuất kho</td><td>Bên <strong>nhận</strong>. CN xuất không tự duyệt.</td></tr>
+          </tbody>
+        </table>
+        <ul>
+          <li><strong>Duyệt</strong> — chuyển sang Đã duyệt.</li>
+          <li><strong>Từ chối</strong> — bắt buộc nhập lý do.</li>
+          <li>Không đủ quyền: dòng hiện «Chờ duyệt».</li>
+        </ul>
+        <h3>9.2. Vận chuyển (trạng thái Đã duyệt)</h3>
+        <p>
+          Nút <strong>Vận chuyển</strong> do <strong>bên gửi</strong> bấm. Hệ thống trừ tồn tại chi nhánh nguồn,
+          phiếu sang «Đang vận chuyển».
+        </p>
+        <div class="warn">Chỉ bấm Vận chuyển khi hàng thật sự xuất khỏi kho. Sai bước này làm lệch tồn ngay.</div>
+        <h3>9.3. Nhận hàng (trạng thái Đang vận chuyển)</h3>
+        <ol>
+          <li>Phiếu nhập: nút <strong>Nhận hàng</strong> — kho tổng hoặc thủ kho / admin CN đích.</li>
+          <li>Phiếu xuất: nút <strong>Xác nhận nhận</strong> — chỉ thủ kho / admin <strong>chi nhánh đích</strong>.</li>
+          <li>Hộp thoại: kiểm tra Từ → Đến, danh sách SP / SL, nhập <strong>Người nhận hàng *</strong> → <strong>Xác nhận nhận hàng</strong>.</li>
+          <li>Hệ thống cộng tồn chi nhánh đích và đánh dấu Hoàn thành.</li>
+        </ol>
+        <div class="tip">Không đủ quyền nhận: hiện «Chờ nhận hàng» hoặc «Chờ CN đích nhận» — nhắc đúng chi nhánh.</div>
+
+        <h2 id="in-huy">10. In phiếu &amp; huỷ</h2>
+        <ul>
+          <li><strong>In</strong> trên mỗi dòng — phiếu kho để kẹp hàng / bàn giao.</li>
+          <li><strong>Huỷ</strong> khi phiếu còn Chờ duyệt / Đã duyệt: người tạo hoặc người có quyền duyệt.</li>
+          <li>Phiếu <em>Đang vận chuyển</em> / <em>Hoàn thành</em>: chỉ admin tổng hoặc admin chi nhánh chính được huỷ.</li>
+        </ul>
+        <div class="warn">Huỷ phiếu đang vận chuyển / đã hoàn thành làm lệch tồn. Báo admin, ghi rõ mã phiếu.</div>
+
+        <h2 id="chi-nhanh">11. Chi nhánh chính vs chi nhánh con</h2>
+        <table>
+          <thead>
+            <tr><th></th><th>Kho tổng / CN chính</th><th>Chi nhánh con</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Xem phiếu</td><td>Cả tổ chức; lọc theo chi nhánh</td><td>Chỉ phiếu có mình ở Từ hoặc Đến</td></tr>
+            <tr><td>Xem tồn CN khác</td><td>Có (chỉ xem)</td><td>Chỉ tồn shop mình</td></tr>
+            <tr><td>Thêm / import SP</td><td>Có</td><td>Không</td></tr>
+            <tr><td>Sửa giá / ngừng KD</td><td>Không (admin / quản lý)</td><td>Không</td></tr>
+            <tr><td>Phiếu nhập CN con xin</td><td>Duyệt + vận chuyển</td><td>Tạo phiếu, chờ kho tổng</td></tr>
+            <tr><td>Nhận hàng phiếu xuất</td><td>Khi mình là đích</td><td>Khi mình là đích</td></tr>
+          </tbody>
+        </table>
+
+        <h2 id="mang">12. Mạng / thiết bị</h2>
+        <ul>
+          <li>Phiếu nhập/xuất <strong>cần mạng</strong>. Không thao tác phiếu khi mất kết nối.</li>
+          <li>Tồn kho / sản phẩm của thủ kho ưu tiên dữ liệu online (số liệu mới sau khi nhận hàng).</li>
+          <li>«Thiết bị chưa được duyệt» → báo admin duyệt máy, không dùng máy lạ.</li>
+        </ul>
+
+        <h2 id="su-co">13. Sự cố thường gặp</h2>
+        <table>
+          <thead>
+            <tr><th>Hiện tượng</th><th>Việc nên làm</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Không thấy POS / Đơn hàng</td><td>Đúng với thủ kho — dùng Tồn kho và Phiếu nhập/xuất</td></tr>
+            <tr><td>Không duyệt được phiếu nhập</td><td>CN nhận không tự duyệt; nhờ kho tổng / bên gửi</td></tr>
+            <tr><td>Không duyệt được phiếu xuất</td><td>Bên gửi không tự duyệt; nhờ CN nhận</td></tr>
+            <tr><td>Không bấm Vận chuyển</td><td>Chưa duyệt, hoặc bạn không phải bên gửi</td></tr>
+            <tr><td>Không nhận hàng</td><td>Phiếu chưa «Đang vận chuyển», hoặc bạn không phải CN đích</td></tr>
+            <tr><td>SL nhập/xuất bị chặn</td><td>Vượt tồn kho chính / tồn nguồn — giảm SL</td></tr>
+            <tr><td>Không thêm được sản phẩm</td><td>Chỉ kho tổng được thêm / import</td></tr>
+            <tr><td>Thiết bị chưa duyệt</td><td>Báo admin</td></tr>
+            <tr><td>Mất mạng khi tạo phiếu</td><td>Đợi mạng; không xóa dữ liệu trên máy</td></tr>
+          </tbody>
+        </table>
+
+        <h2 id="quy-tac">14. Quy tắc làm việc gọn</h2>
+        <ol>
+          <li>Đăng nhập bằng tài khoản thủ kho do quản lý cấp.</li>
+          <li>Mỗi sáng: Tồn kho (sắp hết) → tạo / xử lý phiếu chờ trên menu.</li>
+          <li>Duyệt đúng phía (gửi / nhận) theo loại phiếu — không duyệt hộ sai CN.</li>
+          <li>Vận chuyển chỉ khi hàng đã xuất; nhận hàng chỉ khi hàng đã về, ghi đúng người nhận.</li>
+          <li>Đối chiếu tồn sau khi hoàn thành. Lệch → ghi mã phiếu + giờ + báo quản lý.</li>
+          <li>Không đổi giá / không hủy phiếu đang vận chuyển. Không dùng POS.</li>
+        </ol>
+
+        <div class="footer">
+          VietPOS — Hướng dẫn thủ kho v1.0 · Tài khoản và phân chi nhánh do quản lý cửa hàng cấp.
+        </div>
+      </article>
+    </main>
   </div>
-
-  <div class="toc">
-    <ol>
-      <li>Đăng nhập</li>
-      <li>Menu của thủ kho</li>
-      <li>Dashboard</li>
-      <li>Tồn kho</li>
-      <li>Sản phẩm</li>
-      <li>Phiếu nhập / xuất — tổng quan</li>
-      <li>Tạo phiếu nhập</li>
-      <li>Tạo phiếu xuất</li>
-      <li>Duyệt, vận chuyển, nhận hàng</li>
-      <li>In phiếu &amp; huỷ</li>
-      <li>Chi nhánh chính vs chi nhánh con</li>
-      <li>Mạng / thiết bị</li>
-      <li>Sự cố thường gặp</li>
-      <li>Quy tắc làm việc</li>
-    </ol>
-  </div>
-
-  <h2>1. Đăng nhập</h2>
-  <ol>
-    <li>Mở app <strong>VietPOS</strong> hoặc trình duyệt theo hướng dẫn cửa hàng.</li>
-    <li>Nhập email / mật khẩu do quản lý cấp → <strong>Đăng nhập</strong>.</li>
-    <li>Máy đã từng đăng nhập: có thể chọn tài khoản trong «Tài khoản trên máy này».</li>
-  </ol>
-
-  <figure>
-    <img src="images/user-guide-staff/01-login.png" alt="Màn hình đăng nhập VietPOS" />
-    <figcaption>Hình 1 — Màn hình đăng nhập (chung cho mọi vai trò)</figcaption>
-  </figure>
-
-  <div class="warn">
-    Đăng nhập lần đầu trên máy mới <strong>cần mạng</strong>. Quên mật khẩu → báo quản lý, không dùng chung tài khoản.
-  </div>
-
-  <h2>2. Menu của thủ kho</h2>
-  <p>Sau đăng nhập, sidebar hiện vai trò <strong>Thủ kho</strong>. Các mục bạn dùng:</p>
-  <table>
-    <thead>
-      <tr><th>Menu</th><th>Dùng để</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>Dashboard</td><td>Xem nhanh số liệu cửa hàng (doanh thu, sắp hết hàng…)</td></tr>
-      <tr><td>Sản phẩm</td><td>Xem danh mục; thêm / import nếu làm tại chi nhánh chính</td></tr>
-      <tr><td>Tồn kho</td><td>Xem số lượng; chọn SP sắp hết để tạo phiếu nhập</td></tr>
-      <tr><td>Phiếu nhập/xuất</td><td>Công việc chính — badge đỏ = phiếu chờ xử lý</td></tr>
-    </tbody>
-  </table>
-  <div class="warn">
-    Thủ kho <strong>không có</strong> POS, Đơn hàng, Hóa đơn VAT, Nhân viên, Thống kê, Báo cáo NV, Chuỗi CH.
-    Không cố vào các đường dẫn đó — hệ thống không mở cho vai trò này.
-  </div>
-
-  <h2>3. Dashboard</h2>
-  <p>
-    Trang chủ sau đăng nhập. Dùng để nắm tình hình (đơn hôm nay, hàng sắp hết).
-    Bán hàng và xử lý bill do nhân viên quầy làm trên POS — thủ kho không checkout.
-  </p>
-  <div class="tip">Hàng sắp hết trên Dashboard → vào <strong>Tồn kho</strong> lọc «Tồn ≤ 5» rồi tạo phiếu nhập.</div>
-
-  <h2>4. Tồn kho</h2>
-  <p>Menu <strong>Tồn kho</strong> — theo dõi số lượng, không hiện giá bán / giá vốn với thủ kho.</p>
-  <ul>
-    <li>Thẻ: tổng số lượng tồn · số mặt hàng (SKU) · sắp hết hàng (≤ 5).</li>
-    <li>Ô «Tìm kiếm sản phẩm…» theo tên / mã.</li>
-    <li>Lọc tồn: Tất cả · Tồn ≤ 5 / 10 / 15.</li>
-    <li>Cột: ảnh, mã SP, tên, tồn kho (dòng sắp hết tô vàng + chữ «sắp hết»).</li>
-  </ul>
-  <h3>4.1. Tạo phiếu nhập từ tồn kho</h3>
-  <ol>
-    <li>Tick các mặt hàng cần nhập (hoặc chọn tất cả trên trang lọc).</li>
-    <li>Bấm <strong>Tạo phiếu nhập (n)</strong> — hệ thống gợi ý số lượng (hàng ≤ 5 được đề xuất bù).</li>
-    <li>Kiểm tra dòng hàng / SL → gửi phiếu (xem mục 7).</li>
-  </ol>
-  <div class="warn">Cần mạng để tạo phiếu từ tồn kho. Mất mạng thì nút bị khóa.</div>
-  <div class="tip">
-    Nếu bạn ở <strong>kho tổng / chi nhánh chính</strong>: có thể chọn xem tồn chi nhánh khác (chỉ xem, badge «Chỉ xem»).
-    Sửa / tạo phiếu nhập chỉ khi đang xem <em>chi nhánh của bạn</em>.
-  </div>
-
-  <h2>5. Sản phẩm</h2>
-  <p>Menu <strong>Sản phẩm</strong> — xem danh mục (tên, mã, ĐVT, VAT%, giá bán, tồn, trạng thái).</p>
-  <ul>
-    <li><strong>Giá vốn bị ẩn</strong> với thủ kho.</li>
-    <li><strong>Sửa giá / ngừng kinh doanh</strong> do admin hoặc quản lý tại chi nhánh chính — thủ kho không có nút sửa / ngừng KD.</li>
-    <li>Nếu bạn làm tại <strong>chi nhánh chính</strong> (kho tổng): có thể <strong>Thêm sản phẩm</strong> và <strong>Import Excel</strong>.</li>
-    <li>Chi nhánh con: thường chỉ xem. SP của CN khác ghi «Sản phẩm chi nhánh khác — chỉ xem».</li>
-  </ul>
-  <div class="warn">Không tự ý đổi giá ngoài quy trình. Sai mã / tồn → báo quản lý, không xóa dữ liệu.</div>
-
-  <h2>6. Phiếu nhập / xuất — tổng quan</h2>
-  <p>
-    Menu <strong>Phiếu nhập/xuất</strong>. Mỗi phiếu có <strong>Từ CN → Đến CN</strong>.
-    Badge đỏ trên menu = số phiếu đang chờ bạn xử lý.
-  </p>
-  <table>
-    <thead>
-      <tr><th>Trạng thái</th><th>Ý nghĩa</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>Chờ duyệt</td><td>Mới tạo, chưa duyệt</td></tr>
-      <tr><td>Đã duyệt</td><td>Đã chấp nhận — chờ bên gửi bấm Vận chuyển</td></tr>
-      <tr><td>Đang vận chuyển</td><td>Đã trừ tồn bên gửi — chờ bên nhận xác nhận</td></tr>
-      <tr><td>Hoàn thành</td><td>Đã cộng tồn bên nhận</td></tr>
-      <tr><td>Từ chối / Đã huỷ</td><td>Không điều chuyển</td></tr>
-    </tbody>
-  </table>
-  <p>Lọc: khoảng ngày · loại (Tất cả / Phiếu nhập / Phiếu xuất) · trạng thái. Bấm mũi tên trên dòng để xem chi tiết SP và lịch sử.</p>
-
-  <h2>7. Tạo phiếu nhập</h2>
-  <p>Nút xanh <strong>Tạo phiếu nhập</strong>. Nhập = hàng về chi nhánh đích từ kho tổng (hoặc kho tổng tạo hộ).</p>
-  <h3>7.1. Bạn ở chi nhánh con</h3>
-  <ol>
-    <li>Mở «Tạo phiếu nhập kho» — banner: <em>Kho tổng → chi nhánh của bạn</em>.</li>
-    <li>Thêm sản phẩm (hàng sắp hết hiện trước). Cột «Tồn kho chính» = còn ở kho tổng.</li>
-    <li>SL không được lớn hơn tồn kho chính.</li>
-    <li>Ghi chú nếu cần → tạo phiếu.</li>
-    <li>Bạn <strong>không tự duyệt</strong> phiếu nhập mình xin — kho tổng duyệt và vận chuyển.</li>
-  </ol>
-  <h3>7.2. Bạn ở kho tổng / chi nhánh chính</h3>
-  <ol>
-    <li>Chọn <strong>Chi nhánh gửi hàng</strong> (hàng đi từ CN đó về kho tổng).</li>
-    <li>SL không vượt tồn chi nhánh gửi.</li>
-    <li>Tạo xong: bên gửi (CN nguồn) duyệt / vận chuyển theo quy trình.</li>
-  </ol>
-
-  <h2>8. Tạo phiếu xuất</h2>
-  <p>Nút cam <strong>Tạo phiếu xuất</strong>. Xuất = hàng đi từ chi nhánh bạn sang CN / kho tổng khác.</p>
-  <ol>
-    <li>Chọn <strong>Chi nhánh / kho nhận hàng</strong>.</li>
-    <li>Thêm SP; SL không vượt tồn hiện tại (ô hiện «Tối đa …»).</li>
-    <li>Có cột tồn chi nhánh nhận để đối chiếu.</li>
-    <li>Tạo phiếu. <strong>Bên gửi không tự duyệt</strong> — chi nhánh nhận duyệt. Sau đó bên gửi bấm <strong>Vận chuyển</strong> (trừ tồn nguồn).</li>
-  </ol>
-
-  <h2>9. Duyệt, vận chuyển, nhận hàng</h2>
-  <p>Nút hiện đúng vai trò của chi nhánh bạn trên phiếu đó.</p>
-
-  <h3>9.1. Duyệt / Từ chối (trạng thái Chờ duyệt)</h3>
-  <table>
-    <thead>
-      <tr><th>Loại phiếu</th><th>Ai được duyệt</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>Nhập kho</td><td>Bên <strong>gửi</strong> (kho tổng khi CN con xin nhập). CN nhận không tự duyệt.</td></tr>
-      <tr><td>Xuất kho</td><td>Bên <strong>nhận</strong>. CN xuất không tự duyệt.</td></tr>
-    </tbody>
-  </table>
-  <ul>
-    <li><strong>Duyệt</strong> — chuyển sang Đã duyệt.</li>
-    <li><strong>Từ chối</strong> — bắt buộc nhập lý do.</li>
-    <li>Không đủ quyền: dòng hiện «Chờ duyệt».</li>
-  </ul>
-
-  <h3>9.2. Vận chuyển (trạng thái Đã duyệt)</h3>
-  <p>
-    Nút <strong>Vận chuyển</strong> do <strong>bên gửi</strong> bấm. Hệ thống trừ tồn tại chi nhánh nguồn,
-    phiếu sang «Đang vận chuyển».
-  </p>
-  <div class="warn">Chỉ bấm Vận chuyển khi hàng thật sự xuất khỏi kho. Sai bước này làm lệch tồn ngay.</div>
-
-  <h3>9.3. Nhận hàng (trạng thái Đang vận chuyển)</h3>
-  <ol>
-    <li>Phiếu nhập: nút <strong>Nhận hàng</strong> — kho tổng hoặc thủ kho / admin CN đích.</li>
-    <li>Phiếu xuất: nút <strong>Xác nhận nhận</strong> — chỉ thủ kho / admin <strong>chi nhánh đích</strong>.</li>
-    <li>Hộp thoại: kiểm tra Từ → Đến, danh sách SP / SL, nhập <strong>Người nhận hàng *</strong> → <strong>Xác nhận nhận hàng</strong>.</li>
-    <li>Hệ thống cộng tồn chi nhánh đích và đánh dấu Hoàn thành.</li>
-  </ol>
-  <div class="tip">Không đủ quyền nhận: hiện «Chờ nhận hàng» hoặc «Chờ CN đích nhận» — nhắc đúng chi nhánh, đừng nhận hộ ngoài quy trình.</div>
-
-  <h2>10. In phiếu &amp; huỷ</h2>
-  <ul>
-    <li><strong>In</strong> trên mỗi dòng — phiếu kho để kẹp hàng / bàn giao.</li>
-    <li><strong>Huỷ</strong> khi phiếu còn Chờ duyệt / Đã duyệt: người tạo hoặc người có quyền duyệt.</li>
-    <li>Phiếu <em>Đang vận chuyển</em> / <em>Hoàn thành</em>: chỉ admin tổng hoặc admin chi nhánh chính được huỷ — thủ kho không huỷ hai trạng thái này.</li>
-  </ul>
-  <div class="warn">Huỷ phiếu đang vận chuyển / đã hoàn thành làm lệch tồn. Báo admin, ghi rõ mã phiếu.</div>
-
-  <h2>11. Chi nhánh chính vs chi nhánh con</h2>
-  <table>
-    <thead>
-      <tr><th></th><th>Kho tổng / CN chính</th><th>Chi nhánh con</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>Xem phiếu</td><td>Cả tổ chức; lọc theo chi nhánh</td><td>Chỉ phiếu có mình ở Từ hoặc Đến</td></tr>
-      <tr><td>Xem tồn CN khác</td><td>Có (chỉ xem)</td><td>Chỉ tồn shop mình</td></tr>
-      <tr><td>Thêm / import SP</td><td>Có</td><td>Không</td></tr>
-      <tr><td>Sửa giá / ngừng KD</td><td>Không (admin / quản lý)</td><td>Không</td></tr>
-      <tr><td>Phiếu nhập CN con xin</td><td>Duyệt + vận chuyển</td><td>Tạo phiếu, chờ kho tổng</td></tr>
-      <tr><td>Nhận hàng phiếu xuất</td><td>Khi mình là đích</td><td>Khi mình là đích</td></tr>
-    </tbody>
-  </table>
-
-  <h2>12. Mạng / thiết bị</h2>
-  <ul>
-    <li>Phiếu nhập/xuất <strong>cần mạng</strong>. Nhân viên bán hàng bị chặn hẳn khi offline; thủ kho cũng không nên thao tác phiếu khi mất kết nối.</li>
-    <li>Tồn kho / sản phẩm của thủ kho ưu tiên dữ liệu online (cần số liệu mới sau khi nhận hàng).</li>
-    <li>«Thiết bị chưa được duyệt» → báo admin duyệt máy, không dùng máy lạ.</li>
-  </ul>
-
-  <h2>13. Sự cố thường gặp</h2>
-  <table>
-    <thead>
-      <tr><th>Hiện tượng</th><th>Việc nên làm</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>Không thấy POS / Đơn hàng</td><td>Đúng với thủ kho — dùng Tồn kho và Phiếu nhập/xuất</td></tr>
-      <tr><td>Không duyệt được phiếu nhập</td><td>CN nhận không tự duyệt; nhờ kho tổng / bên gửi</td></tr>
-      <tr><td>Không duyệt được phiếu xuất</td><td>Bên gửi không tự duyệt; nhờ CN nhận</td></tr>
-      <tr><td>Không bấm Vận chuyển</td><td>Chưa duyệt, hoặc bạn không phải bên gửi</td></tr>
-      <tr><td>Không nhận hàng</td><td>Phiếu chưa «Đang vận chuyển», hoặc bạn không phải CN đích</td></tr>
-      <tr><td>SL nhập/xuất bị chặn</td><td>Vượt tồn kho chính / tồn nguồn — giảm SL</td></tr>
-      <tr><td>Không thêm được sản phẩm</td><td>Chỉ kho tổng được thêm / import</td></tr>
-      <tr><td>Thiết bị chưa duyệt</td><td>Báo admin</td></tr>
-      <tr><td>Mất mạng khi tạo phiếu</td><td>Đợi mạng; không xóa dữ liệu trên máy</td></tr>
-    </tbody>
-  </table>
-
-  <h2>14. Quy tắc làm việc gọn</h2>
-  <ol>
-    <li>Đăng nhập bằng tài khoản thủ kho do quản lý cấp.</li>
-    <li>Mỗi sáng: Tồn kho (sắp hết) → tạo / xử lý phiếu chờ trên menu.</li>
-    <li>Duyệt đúng phía (gửi / nhận) theo loại phiếu — không duyệt hộ sai CN.</li>
-    <li>Vận chuyển chỉ khi hàng đã xuất; nhận hàng chỉ khi hàng đã về, ghi đúng người nhận.</li>
-    <li>Đối chiếu tồn sau khi hoàn thành. Lệch → ghi mã phiếu + giờ + báo quản lý.</li>
-    <li>Không đổi giá / không hủy phiếu đang vận chuyển. Không dùng POS.</li>
-  </ol>
-
-  <div class="footer">
-    VietPOS — Hướng dẫn thủ kho v1.0 · Quyền đối chiếu từ role warehouse_keeper.
-    Tài khoản và phân chi nhánh (kho tổng / CN con) do quản lý cửa hàng cấp.
-  </div>
-
+  <script src="assets/guide.js"></script>
 </body>
 </html>

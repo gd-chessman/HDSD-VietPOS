@@ -2,70 +2,52 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hướng dẫn sử dụng VietPOS</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      font-family: "Helvetica Neue", Helvetica, Arial, "Noto Sans", sans-serif;
-      margin: 0;
-      min-height: 100vh;
-      background: #f4f7f5;
-      color: #1a1a1a;
-    }
-    .wrap { max-width: 720px; margin: 0 auto; padding: 48px 20px 64px; }
-    h1 { font-size: 28px; color: #0f3d2e; margin: 0 0 6px; }
-    .sub { color: #555; margin: 0 0 28px; }
-    .cards { display: grid; gap: 16px; }
-    @media (min-width: 640px) { .cards { grid-template-columns: 1fr 1fr; } }
-    a.card {
-      display: block;
-      text-decoration: none;
-      color: inherit;
-      background: #fff;
-      border: 1px solid #d0ddd6;
-      border-radius: 12px;
-      padding: 20px 20px 18px;
-      box-shadow: 0 1px 2px rgba(15, 61, 46, 0.04);
-    }
-    a.card:hover { border-color: #0f3d2e; }
-    a.card h2 { margin: 0 0 6px; font-size: 18px; color: #0f3d2e; }
-    a.card p { margin: 0; font-size: 14px; color: #555; line-height: 1.45; }
-    .tag {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-      color: #1f5c45;
-      background: #e8f0ec;
-      border-radius: 999px;
-      padding: 2px 8px;
-      margin-bottom: 10px;
-    }
-    .pdf { margin-top: 28px; font-size: 14px; color: #444; }
-    .pdf a { color: #0f3d2e; }
-  </style>
+  <link rel="stylesheet" href="assets/guide.css" />
 </head>
 <body>
-  <div class="wrap">
-    <h1>Hướng dẫn VietPOS</h1>
-    <p class="sub">Chọn đúng vai trò của bạn. Mở trên trình duyệt — có ảnh minh họa.</p>
-    <div class="cards">
-      <a class="card" href="Huong-dan-su-dung-VietPOS-Nhan-vien.html">
-        <div class="tag">Thu ngân / quầy</div>
-        <h2>Nhân viên bán hàng</h2>
-        <p>Đăng nhập, mở ca, POS, checkout, hóa đơn, đề nghị hủy, tồn kho, offline, đóng ca.</p>
-      </a>
-      <a class="card" href="Huong-dan-su-dung-VietPOS-Thu-kho.html">
-        <div class="tag">Kho</div>
-        <h2>Thủ kho</h2>
-        <p>Tồn kho, sản phẩm, phiếu nhập / xuất: tạo, duyệt, vận chuyển, nhận hàng.</p>
-      </a>
-    </div>
-    <p class="pdf">
-      Bản in nhân viên:
-      <a href="Huong-dan-su-dung-VietPOS-Nhan-vien.pdf">PDF nhân viên bán hàng</a>
-    </p>
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="mark">V</span> VietPOS HDSD</a>
+    <span class="role">Chọn vai trò</span>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <p class="sidebar-label">Tài liệu</p>
+      <nav class="guides">
+        <a href="Huong-dan-su-dung-VietPOS-Nhan-vien.html">Nhân viên bán hàng</a>
+        <a href="Huong-dan-su-dung-VietPOS-Thu-kho.html">Thủ kho</a>
+      </nav>
+      <p class="sidebar-label">Mục lục</p>
+      <nav class="toc">
+        <a href="#chon-vai-tro">Chọn vai trò</a>
+        <a href="Huong-dan-su-dung-VietPOS-Nhan-vien.html">Nhân viên — 15 mục</a>
+        <a href="Huong-dan-su-dung-VietPOS-Thu-kho.html">Thủ kho — 14 mục</a>
+        <a href="Huong-dan-su-dung-VietPOS-Nhan-vien.pdf">PDF nhân viên</a>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <article class="article">
+        <h1 id="chon-vai-tro">Hướng dẫn VietPOS</h1>
+        <p class="cover-sub">Chọn đúng vai trò. Bên trái luôn có mục lục để nhảy tới từng phần.</p>
+        <p class="meta">Nhân viên v1.2 · Thủ kho v1.0 · 04/09/2026</p>
+
+        <div class="home-grid">
+          <a class="card" href="Huong-dan-su-dung-VietPOS-Nhan-vien.html">
+            <div class="tag">Thu ngân / quầy</div>
+            <h2>Nhân viên bán hàng</h2>
+            <p>Đăng nhập, mở ca, POS, checkout, hóa đơn, đề nghị hủy, tồn kho, offline, đóng ca.</p>
+          </a>
+          <a class="card" href="Huong-dan-su-dung-VietPOS-Thu-kho.html">
+            <div class="tag">Kho</div>
+            <h2>Thủ kho</h2>
+            <p>Tồn kho, sản phẩm, phiếu nhập / xuất: tạo, duyệt, vận chuyển, nhận hàng.</p>
+          </a>
+        </div>
+      </article>
+    </main>
   </div>
 </body>
 </html>
