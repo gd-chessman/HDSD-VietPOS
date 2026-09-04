@@ -2,12 +2,37 @@
 
 Hướng dẫn sử dụng VietPOS cho nhân viên bán hàng (thu ngân / quầy).
 
+Mở file HTML hoặc deploy lên Vercel — vào đúng domain là xem được ngay (không cần build).
+
 ## Tài liệu
 
-- [Hướng dẫn nhân viên (HTML)](Huong-dan-su-dung-VietPOS-Nhan-vien.html) — bản xem trên trình duyệt, có ảnh chụp màn hình
+- [Hướng dẫn nhân viên (web)](index.html) — bản xem trên trình duyệt, có ảnh
 - [Hướng dẫn nhân viên (PDF)](Huong-dan-su-dung-VietPOS-Nhan-vien.pdf) — bản in / gửi cửa hàng
 
 Phiên bản: **1.2** · Ngày: 04/09/2026 · Ảnh chụp từ tài khoản staff trên môi trường demo.
+
+## Xem trên Vercel
+
+Repo này là **static HTML** (`index.html` + `images/`). Vercel không cần Node, không cần lệnh build.
+
+### Lần đầu (một lần)
+
+1. Push `main` lên GitHub (`gd-chessman/HDSD-VietPOS`).
+2. Vào [vercel.com/new](https://vercel.com/new) → **Import** repo `HDSD-VietPOS`.
+3. Giữ nguyên:
+   - **Framework Preset:** Other
+   - **Build Command:** để trống
+   - **Output Directory:** để trống
+   - **Install Command:** để trống
+4. Bấm **Deploy**.
+
+URL sẽ dạng `https://hdsd-vietpos.vercel.app` (hoặc tên bạn đặt). Vào gốc `/` là ra hướng dẫn.
+
+Gắn domain riêng: Project → **Settings → Domains**.
+
+### Sau đó
+
+Mỗi lần `git push` lên `main`, Vercel tự deploy lại. Không cần cấu hình thêm.
 
 ## Nội dung
 
