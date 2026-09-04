@@ -9,7 +9,7 @@ Hướng dẫn sử dụng VietPOS theo vai trò. Deploy lên Vercel — vào do
 - [Nhân viên bán hàng (PDF)](Huong-dan-su-dung-VietPOS-Nhan-vien.pdf)
 - [Thủ kho (HTML)](Huong-dan-su-dung-VietPOS-Thu-kho.html)
 
-Phiên bản nhân viên: **1.2** · Thủ kho: **1.0** · Ngày: 04/09/2026
+Phiên bản nhân viên: **1.2** · Thủ kho: **1.1** · Ngày: 04/09/2026
 
 ## Xem trên Vercel
 

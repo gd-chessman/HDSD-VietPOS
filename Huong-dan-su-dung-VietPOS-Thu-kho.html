@@ -43,7 +43,7 @@
       <article class="article">
         <h1>Hướng dẫn sử dụng VietPOS</h1>
         <p class="cover-sub">Dành cho <strong>thủ kho</strong></p>
-        <p class="meta">Phiên bản 1.0 · 04/09/2026 · Đối chiếu quyền role warehouse_keeper</p>
+        <p class="meta">Phiên bản 1.1 · 04/09/2026 · Ảnh chụp từ tài khoản thủ kho trên môi trường demo</p>
 
         <div class="box">
           Thủ kho <strong>không bán hàng tại POS</strong> và <strong>không xem / hủy đơn</strong>.
@@ -58,8 +58,8 @@
           <li>Máy đã từng đăng nhập: có thể chọn tài khoản trong «Tài khoản trên máy này».</li>
         </ol>
         <figure>
-          <img src="images/user-guide-staff/01-login.png" alt="Màn hình đăng nhập VietPOS" />
-          <figcaption>Hình 1 — Màn hình đăng nhập (chung cho mọi vai trò)</figcaption>
+          <img src="images/user-guide-warehouse/01-login.png" alt="Màn hình đăng nhập VietPOS" />
+          <figcaption>Hình 1 — Màn hình đăng nhập</figcaption>
         </figure>
         <div class="warn">
           Đăng nhập lần đầu trên máy mới <strong>cần mạng</strong>. Quên mật khẩu → báo quản lý, không dùng chung tài khoản.
@@ -78,6 +78,10 @@
             <tr><td>Phiếu nhập/xuất</td><td>Công việc chính — badge đỏ = phiếu chờ xử lý</td></tr>
           </tbody>
         </table>
+        <figure>
+          <img src="images/user-guide-warehouse/02-dashboard.png" alt="Dashboard thủ kho — menu trái không có POS" />
+          <figcaption>Hình 2 — Dashboard: menu trái chỉ Dashboard, Sản phẩm, Tồn kho, Phiếu nhập/xuất. Vai trò «Thủ kho» ở cuối sidebar.</figcaption>
+        </figure>
         <div class="warn">
           Thủ kho <strong>không có</strong> POS, Đơn hàng, Hóa đơn VAT, Nhân viên, Thống kê, Báo cáo NV, Chuỗi CH.
         </div>
@@ -87,7 +91,7 @@
           Trang chủ sau đăng nhập. Dùng để nắm tình hình (đơn hôm nay, hàng sắp hết).
           Bán hàng và xử lý bill do nhân viên quầy làm trên POS — thủ kho không checkout.
         </p>
-        <div class="tip">Hàng sắp hết trên Dashboard → vào <strong>Tồn kho</strong> lọc «Tồn ≤ 5» rồi tạo phiếu nhập.</div>
+        <div class="tip">Hàng sắp hết trên Dashboard (ô «Cảnh báo tồn kho») → vào <strong>Tồn kho</strong> lọc «Tồn ≤ 5» rồi tạo phiếu nhập. Badge đỏ trên «Phiếu nhập/xuất» = phiếu chờ xử lý.</div>
 
         <h2 id="ton-kho">4. Tồn kho</h2>
         <p>Menu <strong>Tồn kho</strong> — theo dõi số lượng, không hiện giá bán / giá vốn với thủ kho.</p>
@@ -97,12 +101,20 @@
           <li>Lọc tồn: Tất cả · Tồn ≤ 5 / 10 / 15.</li>
           <li>Cột: ảnh, mã SP, tên, tồn kho (dòng sắp hết tô vàng + chữ «sắp hết»).</li>
         </ul>
+        <figure>
+          <img src="images/user-guide-warehouse/04-inventory.png" alt="Màn tồn kho của thủ kho" />
+          <figcaption>Hình 3 — Tồn kho: thẻ tổng SL / SKU / sắp hết; bảng có ảnh + mã + tên + tồn. Không hiện giá bán / giá vốn.</figcaption>
+        </figure>
         <h3>4.1. Tạo phiếu nhập từ tồn kho</h3>
         <ol>
           <li>Tick các mặt hàng cần nhập (hoặc chọn tất cả trên trang lọc).</li>
           <li>Bấm <strong>Tạo phiếu nhập (n)</strong> — hệ thống gợi ý số lượng (hàng ≤ 5 được đề xuất bù).</li>
           <li>Kiểm tra dòng hàng / SL → gửi phiếu (xem mục 7).</li>
         </ol>
+        <figure>
+          <img src="images/user-guide-warehouse/04b-inventory-chon-nhap.png" alt="Chọn sản phẩm trên tồn kho để tạo phiếu nhập" />
+          <figcaption>Hình 4 — Tick hàng (hoặc chọn tất cả) → nút xanh «Tạo phiếu nhập (n)»</figcaption>
+        </figure>
         <div class="warn">Cần mạng để tạo phiếu từ tồn kho. Mất mạng thì nút bị khóa.</div>
         <div class="tip">
           Nếu bạn ở <strong>kho tổng / chi nhánh chính</strong>: có thể chọn xem tồn chi nhánh khác (chỉ xem, badge «Chỉ xem»).
@@ -117,6 +129,10 @@
           <li>Nếu làm tại <strong>chi nhánh chính</strong> (kho tổng): có thể <strong>Thêm sản phẩm</strong> và <strong>Import Excel</strong>.</li>
           <li>Chi nhánh con: thường chỉ xem. SP của CN khác ghi «Sản phẩm chi nhánh khác — chỉ xem».</li>
         </ul>
+        <figure>
+          <img src="images/user-guide-warehouse/03-products.png" alt="Danh mục sản phẩm của thủ kho" />
+          <figcaption>Hình 5 — Sản phẩm: tại chi nhánh chính có «Thêm sản phẩm» / Import Excel. Không có cột giá vốn, không có nút sửa / ngừng KD.</figcaption>
+        </figure>
         <div class="warn">Không tự ý đổi giá ngoài quy trình. Sai mã / tồn → báo quản lý, không xóa dữ liệu.</div>
 
         <h2 id="phieu-kho">6. Phiếu nhập / xuất — tổng quan</h2>
@@ -137,6 +153,10 @@
           </tbody>
         </table>
         <p>Lọc: khoảng ngày · loại (Tất cả / Phiếu nhập / Phiếu xuất) · trạng thái. Bấm mũi tên trên dòng để xem chi tiết SP và lịch sử.</p>
+        <figure>
+          <img src="images/user-guide-warehouse/05-stock-requests.png" alt="Danh sách phiếu nhập xuất kho" />
+          <figcaption>Hình 6 — Phiếu nhập/xuất: lọc ngày / chi nhánh / loại / trạng thái; bảng Từ CN → Đến CN; nút Tạo phiếu nhập (xanh) và Tạo phiếu xuất (cam).</figcaption>
+        </figure>
 
         <h2 id="tao-nhap">7. Tạo phiếu nhập</h2>
         <p>Nút xanh <strong>Tạo phiếu nhập</strong>. Nhập = hàng về chi nhánh đích từ kho tổng (hoặc kho tổng tạo hộ).</p>
@@ -154,6 +174,10 @@
           <li>SL không vượt tồn chi nhánh gửi.</li>
           <li>Tạo xong: bên gửi (CN nguồn) duyệt / vận chuyển theo quy trình.</li>
         </ol>
+        <figure>
+          <img src="images/user-guide-warehouse/06-tao-phieu-nhap.png" alt="Hộp thoại tạo phiếu nhập kho" />
+          <figcaption>Hình 7 — Tạo phiếu nhập: chọn chi nhánh gửi (nếu kho tổng), thêm SP — hàng sắp hết hiện trước.</figcaption>
+        </figure>
 
         <h2 id="tao-xuat">8. Tạo phiếu xuất</h2>
         <p>Nút cam <strong>Tạo phiếu xuất</strong>. Xuất = hàng đi từ chi nhánh bạn sang CN / kho tổng khác.</p>
@@ -163,6 +187,10 @@
           <li>Có cột tồn chi nhánh nhận để đối chiếu.</li>
           <li>Tạo phiếu. <strong>Bên gửi không tự duyệt</strong> — chi nhánh nhận duyệt. Sau đó bên gửi bấm <strong>Vận chuyển</strong> (trừ tồn nguồn).</li>
         </ol>
+        <figure>
+          <img src="images/user-guide-warehouse/07-tao-phieu-xuat.png" alt="Hộp thoại tạo phiếu xuất kho" />
+          <figcaption>Hình 8 — Tạo phiếu xuất: chọn chi nhánh / kho nhận, thêm SP, ghi chú rồi gửi.</figcaption>
+        </figure>
 
         <h2 id="duyet">9. Duyệt, vận chuyển, nhận hàng</h2>
         <p>Nút hiện đúng vai trò của chi nhánh bạn trên phiếu đó.</p>
@@ -181,6 +209,14 @@
           <li><strong>Từ chối</strong> — bắt buộc nhập lý do.</li>
           <li>Không đủ quyền: dòng hiện «Chờ duyệt».</li>
         </ul>
+        <figure>
+          <img src="images/user-guide-warehouse/05b-stock-requests-cho-duyet.png" alt="Tab chờ duyệt với nút Duyệt và Từ chối" />
+          <figcaption>Hình 9 — Tab «Chờ duyệt»: nút Duyệt (xanh) / Từ chối (đỏ) / Huỷ trên từng phiếu đủ quyền.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/user-guide-warehouse/05c-stock-requests-chitiet.png" alt="Mở chi tiết phiếu xem sản phẩm" />
+          <figcaption>Hình 10 — Bấm mũi tên mở dòng: nhật ký thao tác + chi tiết sản phẩm (ảnh, tên, SL).</figcaption>
+        </figure>
         <h3>9.2. Vận chuyển (trạng thái Đã duyệt)</h3>
         <p>
           Nút <strong>Vận chuyển</strong> do <strong>bên gửi</strong> bấm. Hệ thống trừ tồn tại chi nhánh nguồn,
@@ -253,9 +289,13 @@
           <li>Đối chiếu tồn sau khi hoàn thành. Lệch → ghi mã phiếu + giờ + báo quản lý.</li>
           <li>Không đổi giá / không hủy phiếu đang vận chuyển. Không dùng POS.</li>
         </ol>
+        <figure>
+          <img src="images/user-guide-warehouse/08-dang-xuat.png" alt="Nút đăng xuất ở sidebar thủ kho" />
+          <figcaption>Hình 11 — «Đăng xuất» ở cuối sidebar (dưới tên + vai trò Thủ kho).</figcaption>
+        </figure>
 
         <div class="footer">
-          VietPOS — Hướng dẫn thủ kho v1.0 · Tài khoản và phân chi nhánh do quản lý cửa hàng cấp.
+          VietPOS — Hướng dẫn thủ kho v1.1 (đủ ảnh luồng kho) · Tài khoản và phân chi nhánh do quản lý cửa hàng cấp.
         </div>
       </article>
     </main>

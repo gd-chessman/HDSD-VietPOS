@@ -1,3 +1,3 @@
-Warehouse-keeper user-guide screenshots (v1.0).
-Login shot reuses staff 01-login.png (same screen).
-Capture remaining shots while logged in as warehouse_keeper on the shop instance.
+Warehouse-keeper screenshots (v1.1). Captured as role thủ kho on demo shop.
+01 login, 02 dashboard/menu, 03 products, 04 inventory, 04b select-to-import,
+05 stock list, 05b pending, 05c slip detail, 06 create import, 07 create export, 08 logout.
