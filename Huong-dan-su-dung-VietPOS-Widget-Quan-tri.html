@@ -101,13 +101,13 @@
         <h2 id="giao-dien">7. Giao diện sáng / tối</h2>
         <p>Menu ≡ → <strong>Giao diện Widget</strong> → Hệ thống / Sáng / Tối. Widget chưa đổi màu: mở app hoặc gỡ/thêm lại widget.</p>
 
-        <h2 id="thong-bao">8. Thông báo đơn mới</h2>
+        <h2 id="thong-bao">8. Thông báo hệ thống (Android)</h2>
         <ul>
           <li>Sau khi đăng nhập <strong>super_admin</strong> trên máy này.</li>
-          <li>Bật quyền <strong>Thông báo</strong> (Android 13+), kênh «<strong>Đơn hàng mới</strong>».</li>
-          <li>App poll <strong>API</strong> định kỳ (~20 giây) — <strong>không</strong> qua LAN ghép quầy.</li>
-          <li>Nội dung kiểu: <em>Đơn mới {mã} · {shop}</em> — quầy · <strong>số món</strong> · tổng tiền · (Tiền mặt / Thẻ / Chuyển khoản).</li>
-          <li>Trên POS web, super_admin có thể chỉnh <strong>cài đặt thông báo</strong> (chuông thông báo → cấu hình loại sự kiện / email) — tablet nhận phần in-app tương ứng server.</li>
+          <li>Bật quyền <strong>Thông báo</strong> (Android 13+), kênh «<strong>Thông báo VietPOS</strong>».</li>
+          <li>App poll <strong>/api/notifications</strong> (~20 giây) — cùng hộp thư <strong>chuông in-app</strong> trên POS (đơn mới, đề nghị huỷ, in lại, VAT, phiếu kho… theo cấu hình server). <strong>Không</strong> qua LAN ghép quầy.</li>
+          <li>Ví dụ đơn mới: <em>Đơn mới {mã} · {shop}</em> — quầy · số món · tổng tiền · (PT thanh toán).</li>
+          <li>POS → <strong>cài đặt thông báo</strong>: bật/tắt từng loại in-app (và email); tablet chỉ nhận loại server gửi vào hộp thư user đang đăng nhập.</li>
         </ul>
 
         <h2 id="dang-xuat">9. Đăng xuất</h2>
@@ -132,8 +132,8 @@
               <td>Đăng nhập lại; mở app; đợi đồng bộ.</td>
             </tr>
             <tr>
-              <td>Không có thông báo đơn</td>
-              <td>Login super_admin; bật thông báo; server có đơn mới.</td>
+              <td>Không có thông báo Android</td>
+              <td>Login super_admin; bật quyền + kênh; có thông báo chưa đọc trên chuông POS.</td>
             </tr>
           </tbody>
         </table>
