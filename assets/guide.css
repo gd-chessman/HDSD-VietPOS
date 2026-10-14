@@ -133,12 +133,19 @@ a:hover { color: var(--green); }
 
 .guides details.guides-widget {
   margin: 0;
+  display: block;
+  width: 100%;
+  min-width: 0;
+  grid-column: 1 / -1;
 }
 
 .guides-widget > summary {
   list-style: none;
+  list-style-type: none;
   cursor: pointer;
   user-select: none;
+  -webkit-appearance: none;
+  appearance: none;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -177,8 +184,13 @@ a:hover { color: var(--green); }
   background: var(--green-soft);
 }
 
+.guides-widget.is-active > summary,
 .guides-widget:has(.guides-widget-inner a.active) > summary {
   color: var(--green);
+}
+
+.guides-widget:not([open]) .guides-widget-inner {
+  display: none;
 }
 
 .guides-widget-inner {

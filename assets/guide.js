@@ -33,7 +33,10 @@
   });
 
   var widgetGroup = document.querySelector(".guides-widget");
-  if (widgetGroup && widgetGroup.querySelector(".guides-widget-inner a.active")) {
-    widgetGroup.open = true;
+  if (widgetGroup) {
+    if (widgetGroup.querySelector(".guides-widget-inner a.active")) {
+      widgetGroup.open = true;
+      widgetGroup.classList.add("is-active");
+    }
   }
 })();
