@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hướng dẫn VietPOS — Widget · Quản trị</title>
+  <link rel="stylesheet" href="assets/guide.css" />
+</head>
+<body>
+  <header class="topbar">
+    <button class="toc-toggle" type="button">Mục lục</button>
+    <a class="brand" href="index.html"><span class="mark">V</span> VietPOS HDSD</a>
+    <span class="role">Widget · Quản trị</span>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <p class="sidebar-label">Tài liệu</p>
+      <nav class="guides">
+        <a href="Huong-dan-su-dung-VietPOS-Nhan-vien.html">Nhân viên bán hàng</a>
+        <a href="Huong-dan-su-dung-VietPOS-Thu-kho.html">Thủ kho</a>
+        <a href="Huong-dan-su-dung-VietPOS-Widget.html">Widget (chọn trang)</a>
+        <a class="active" href="Huong-dan-su-dung-VietPOS-Widget-Quan-tri.html">Widget · Quản trị</a>
+        <a href="Huong-dan-su-dung-VietPOS-Widget-Nhan-vien.html">Widget · Ghép quầy</a>
+      </nav>
+      <p class="sidebar-label">Mục lục</p>
+      <nav class="toc">
+        <a href="#gioi-thieu">1. Dành cho ai</a>
+        <a href="#chuan-bi">2. Cài app &amp; URL server</a>
+        <a href="#vao-quan-tri">3. Vào màn Quản trị</a>
+        <a href="#dang-nhap">4. Đăng nhập</a>
+        <a href="#them-widget">5. Thêm widget</a>
+        <a href="#noi-dung">6. Nội dung widget</a>
+        <a href="#giao-dien">7. Sáng / tối</a>
+        <a href="#thong-bao">8. Thông báo đơn mới</a>
+        <a href="#dang-xuat">9. Đăng xuất</a>
+        <a href="#su-co">10. Sự cố</a>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <article class="article">
+        <h1 id="gioi-thieu">Widget Android — Quản trị hệ thống</h1>
+        <p class="cover-sub">Tài khoản <strong>super_admin</strong> · widget màn hình chính · thông báo đơn POS qua server</p>
+        <p class="meta">HDSD v1.2 · App 0.2.0 · 14/10/2026</p>
+
+        <div class="box">
+          Trang này <strong>chỉ</strong> hướng dẫn quản trị widget. Ghép tablet với quầy (LAN, chụp CK) →
+          <a href="Huong-dan-su-dung-VietPOS-Widget-Nhan-vien.html">Widget · Ghép quầy</a>.
+        </div>
+
+        <div class="warn">Admin cửa hàng / staff POS <strong>không</strong> xem được widget tổng quan này.</div>
+
+        <h2 id="chuan-bi">2. Cài app &amp; URL server</h2>
+        <ol>
+          <li>Cài APK <strong>VietPOS Widget</strong> (bật cài từ nguồn không xác định nếu cần).</li>
+          <li>Tablet <strong>cùng mạng</strong> với server VietPOS (Wi‑Fi / LAN).</li>
+          <li>Chuẩn bị <strong>URL</strong>, ví dụ <code>http://IP:8080</code> hoặc <code>http://IP:3003</code> — không thêm <code>/</code> cuối.</li>
+        </ol>
+
+        <h2 id="vao-quan-tri">3. Vào màn Quản trị</h2>
+        <ul>
+          <li>Màn đầu app → chạm <strong>Quản trị</strong>.</li>
+          <li>Hoặc menu <strong>≡</strong> → <strong>Quản trị</strong> (chưa login) / <strong>Hồ sơ</strong> (đã login).</li>
+        </ul>
+
+        <h2 id="dang-nhap">4. Đăng nhập</h2>
+        <ol>
+          <li>Nhập <strong>URL</strong>, <strong>Email</strong>, <strong>Mật khẩu</strong> (giống POS web).</li>
+          <li>Có <strong>PIN 4 số</strong>: nhập PIN → <strong>Đăng nhập</strong>. PIN sai → app xóa ô PIN.</li>
+        </ol>
+        <p>Sau đăng nhập, app đồng bộ widget (nền ~30 phút/lần và khi mở app).</p>
+
+        <h2 id="them-widget">5. Thêm widget ra màn hình chính</h2>
+        <ol>
+          <li>Giữ icon màn hình chính → <strong>Widget</strong> → chọn <strong>VietPOS</strong> (2×2, 2×3, 3×4, 4×2, 4×4, 4×5…).</li>
+          <li>Kéo widget vào màn hình.</li>
+        </ol>
+        <p>«Mở app để đăng nhập» · «Đang tải…» · có số liệu. Chạm dòng trên widget → mở app.</p>
+
+        <h2 id="noi-dung">6. Nội dung widget (cuộn)</h2>
+        <ol>
+          <li><strong>Tổng quan</strong> — doanh thu, đơn, khách xem, TM/Thẻ/CK, tồn thấp, xu hướng %.</li>
+          <li><strong>Từng cửa hàng</strong> — chuỗi nhiều shop.</li>
+          <li><strong>Nhập hàng</strong> — backlog hóa đơn nhập.</li>
+          <li><strong>Cần xử lý</strong> — VAT, HĐĐT, đặt hàng, nhập hàng, thông báo chưa đọc.</li>
+        </ol>
+
+        <h2 id="giao-dien">7. Giao diện sáng / tối</h2>
+        <p>Menu ≡ → <strong>Giao diện Widget</strong> → Hệ thống / Sáng / Tối. Widget chưa đổi màu: mở app hoặc gỡ/thêm lại widget.</p>
+
+        <h2 id="thong-bao">8. Thông báo đơn mới</h2>
+        <ul>
+          <li>Sau khi đăng nhập super_admin trên máy này.</li>
+          <li>Bật quyền <strong>Thông báo</strong> (Android 13+), kênh «Đơn hàng mới».</li>
+          <li>Lấy qua <strong>API server</strong> — không qua LAN ghép quầy.</li>
+        </ul>
+
+        <h2 id="dang-xuat">9. Đăng xuất</h2>
+        <p>Menu ≡ → <strong>Đăng xuất</strong> → widget «Mở app để đăng nhập», thông báo đơn dừng. (Cũng hủy ghép quầy nếu máy đang ghép — xem trang Ghép quầy.)</p>
+
+        <h2 id="su-co">10. Sự cố</h2>
+        <table>
+          <thead>
+            <tr><th>Triệu chứng</th><th>Xử lý</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>«Chỉ quản trị hệ thống được xem widget»</td>
+              <td>Dùng tài khoản <strong>super_admin</strong>.</td>
+            </tr>
+            <tr>
+              <td>Không kết nối server</td>
+              <td>URL đúng, server chạy, cùng mạng; không <code>127.0.0.1</code> trên máy thật.</td>
+            </tr>
+            <tr>
+              <td>Widget trống / lỗi</td>
+              <td>Đăng nhập lại; mở app; đợi đồng bộ.</td>
+            </tr>
+            <tr>
+              <td>Không có thông báo đơn</td>
+              <td>Login super_admin; bật thông báo; server có đơn mới.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="footer">
+          VietPOS — Widget · Quản trị v1.2 · App 0.2.0.
+        </div>
+      </article>
+    </main>
+  </div>
+  <script src="assets/guide.js"></script>
+</body>
+</html>

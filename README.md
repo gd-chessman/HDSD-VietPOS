@@ -8,8 +8,11 @@ Hướng dẫn sử dụng VietPOS theo vai trò. Deploy lên Vercel — vào do
 - [Nhân viên bán hàng (HTML)](Huong-dan-su-dung-VietPOS-Nhan-vien.html)
 - [Nhân viên bán hàng (PDF)](Huong-dan-su-dung-VietPOS-Nhan-vien.pdf)
 - [Thủ kho (HTML)](Huong-dan-su-dung-VietPOS-Thu-kho.html)
+- [Widget — chọn trang](Huong-dan-su-dung-VietPOS-Widget.html)
+- [Widget · Quản trị (HTML)](Huong-dan-su-dung-VietPOS-Widget-Quan-tri.html)
+- [Widget · Ghép quầy (HTML)](Huong-dan-su-dung-VietPOS-Widget-Nhan-vien.html)
 
-Phiên bản nhân viên: **1.2** · Thủ kho: **1.1** · Ngày: 04/09/2026
+Phiên bản nhân viên: **1.2** · Thủ kho: **1.1** · Widget: **1.2** · Ngày: 14/10/2026
 
 ## Xem trên Vercel
 
@@ -39,3 +42,5 @@ Mỗi lần `git push` lên `main`, Vercel tự deploy lại.
 **Nhân viên:** đăng nhập, mở ca, POS, hóa đơn, đề nghị hủy, đơn trong ca, tồn kho, offline, đóng ca.
 
 **Thủ kho:** tồn kho, sản phẩm, phiếu nhập/xuất (tạo → duyệt → vận chuyển → nhận hàng). Không có POS / đơn hàng.
+
+**Widget Android (2 trang):** [Quản trị](Huong-dan-su-dung-VietPOS-Widget-Quan-tri.html) (super_admin, widget, thông báo đơn) · [Ghép quầy](Huong-dan-su-dung-VietPOS-Widget-Nhan-vien.html) (LAN, PIN, chụp CK).
