@@ -1,3 +1,8 @@
-Warehouse-keeper screenshots (v1.1). Captured as role thủ kho on demo shop.
-01 login, 02 dashboard/menu, 03 products, 04 inventory, 04b select-to-import,
-05 stock list, 05b pending, 05c slip detail, 06 create import, 07 create export, 08 logout.
+Warehouse-keeper screenshots v1.4 (14/10/2026, POS QuyLV).
+
+Capture: HDSD-VietPOS/scripts → pnpm run capture:warehouse
+Account: warehouse.local@local.demo (local demo DB)
+
+Files: 01-login, 01b-pin-nhap, 02-dashboard, 02b-my-permissions, 03-products,
+04-inventory, 04b-inventory-chon-nhap, 05-stock-requests, 05b-stock-requests-cho-duyet,
+05c-stock-requests-chitiet (giữ ảnh cũ nếu DB không còn phiếu mẫu), 06/07 create dialogs, 08-dang-xuat.

@@ -18,6 +18,8 @@
       <p class="sidebar-label">Tài liệu</p>
       <nav class="guides">
         <a class="active" href="Huong-dan-su-dung-VietPOS-Nhan-vien.html">Nhân viên bán hàng</a>
+        <a href="Huong-dan-su-dung-VietPOS-Quan-ly.html">Quản lý</a>
+        <a href="Huong-dan-su-dung-VietPOS-Ke-toan.html">Kế toán</a>
         <a href="Huong-dan-su-dung-VietPOS-Thu-kho.html">Thủ kho</a>
         <a href="Huong-dan-su-dung-VietPOS-Widget.html">Widget (chọn trang)</a>
         <a href="Huong-dan-su-dung-VietPOS-Widget-Quan-tri.html">Widget · Quản trị</a>
@@ -26,7 +28,9 @@
       <p class="sidebar-label">Mục lục</p>
       <nav class="toc">
         <a href="#dang-nhap">1. Đăng nhập</a>
+        <a href="#ma-pin">1b. Mã PIN &amp; quên PIN</a>
         <a href="#sau-dang-nhap">2. Sau đăng nhập</a>
+        <a href="#quyen-cua-toi">2b. Quyền của tôi</a>
         <a href="#mo-ca">3. Mở ca</a>
         <a href="#pos">4. Bán hàng POS</a>
         <a href="#hoa-don">5. Hóa đơn</a>
@@ -47,7 +51,7 @@
       <article class="article">
         <h1>Hướng dẫn sử dụng VietPOS</h1>
         <p class="cover-sub">Dành cho <strong>nhân viên bán hàng</strong> (thu ngân / quầy)</p>
-        <p class="meta">Phiên bản 1.2 · 04/09/2026 · Có ảnh chụp luồng bán hàng từ tài khoản staff (demo)</p>
+        <p class="meta">Phiên bản 1.4 · 14/10/2026 · Khớp POS QuyLV · Ảnh chụp từ POS web (staff demo)</p>
 
         <div class="box">
           Đăng nhập → mở ca → thêm SP / giỏ hàng → checkout → chọn thanh toán / in bill →
@@ -67,11 +71,37 @@
         <div class="warn"><strong>Offline:</strong> không đăng nhập tài khoản mới được. Cần có mạng lần đầu trên mỗi máy.</div>
         <div class="tip">Không chia sẻ mật khẩu. Quên mật khẩu → báo quản lý.</div>
 
+        <h3 id="ma-pin">1b. Mã PIN 4 số (máy quầy) &amp; quên PIN</h3>
+        <p>
+          <strong>Nhân viên bán hàng:</strong> lần đầu trên mỗi máy đăng nhập <strong>email + mật khẩu</strong> (cần mạng),
+          sau đó <strong>đặt PIN 4 số</strong> cho máy đó. Các lần sau trên cùng máy: chọn tài khoản trong «Tài khoản trên máy này» → chỉ nhập PIN.
+          Quản lý / admin shop: sau email/mật khẩu còn bước xác nhận PIN tài khoản (khác luồng PIN máy của staff).
+        </p>
+        <figure>
+          <img src="images/user-guide-staff/01b-pin-nhap.png" alt="Nhập mã PIN sau đăng nhập email" />
+          <figcaption>Hình 1b — Nhập PIN 4 số (lần đầu thiết lập hoặc mở lại tài khoản đã lưu trên máy)</figcaption>
+        </figure>
+        <ul>
+          <li>Nhập sai nhiều lần → <strong>khóa PIN tối đa 5 phút</strong> (đếm ngược trên dialog).</li>
+          <li><strong>Quên mã PIN</strong> (staff / manager / admin shop, cần mạng): bấm <strong>Quên mã PIN?</strong> trên dialog → gửi yêu cầu. Quản lý vào <strong>Nhân viên bán hàng</strong> → «Yêu cầu quên mã PIN» → <em>Để họ tự đặt</em> hoặc <em>Đặt PIN giúp</em>.</li>
+          <li><strong>Super admin</strong> không gửi yêu cầu quên PIN trong app — liên hệ vận hành.</li>
+        </ul>
+        <p>Ghép tablet Widget với quầy Desktop dùng <strong>PIN 4 số đã lưu trên máy quầy</strong> — xem
+          <a href="Huong-dan-su-dung-VietPOS-Widget-Nhan-vien.html">Widget · Ghép quầy</a>.</p>
+
         <h2 id="sau-dang-nhap">2. Màn hình sau khi đăng nhập</h2>
         <p>
-          Sau đăng nhập bạn thấy menu trái và Dashboard. Nhân viên thường có:
-          <strong>Dashboard</strong>, <strong>POS</strong>, <strong>Sản phẩm</strong>, <strong>Tồn kho</strong>,
-          <strong>Phiếu nhập/xuất</strong>, <strong>Đơn hàng</strong>.
+          Menu trái được nhóm theo vai trò. <strong>Nhân viên bán hàng</strong> thường thấy:
+        </p>
+        <ul>
+          <li><strong>Tổng quan:</strong> Dashboard</li>
+          <li><strong>Bán hàng:</strong> POS, Đơn hàng</li>
+          <li><strong>Kho hàng:</strong> Sản phẩm, Tồn kho, Phiếu nhập/xuất</li>
+          <li><strong>Hệ thống:</strong> Quyền của tôi (và Thư viện ảnh nếu shop bật quyền xem)</li>
+        </ul>
+        <p>
+          Góc phải: chuông thông báo, avatar → <strong>Quyền của tôi</strong>, <strong>Phím tắt chức năng</strong>, <strong>Đăng xuất</strong>.
+          Trên app Desktop (Tauri) còn có mục kiểm tra cập nhật và cài đặt camera / thiết bị LAN — xem thêm tài liệu Widget nếu dùng tablet ghép quầy.
         </p>
         <p>Vào <strong>POS</strong> để bán hàng.</p>
         <figure>
@@ -79,48 +109,62 @@
           <figcaption>Hình 2 — Dashboard (menu trái; nhân viên có thể thấy ít mục hơn admin)</figcaption>
         </figure>
 
+        <h3 id="quyen-cua-toi">2b. Quyền của tôi &amp; thiết bị</h3>
+        <p>
+          Menu <strong>Hệ thống → Quyền của tôi</strong> (hoặc avatar → Quyền của tôi): xem quyền được cấp, trạng thái <strong>PIN</strong>, đổi PIN khi được phép.
+          Nếu shop bật <strong>duyệt thiết bị</strong> và máy chưa được duyệt, màn hình sẽ chặn — báo quản lý duyệt trong menu quản trị (nhân viên không tự bật).
+        </p>
+        <figure>
+          <img src="images/user-guide-staff/02b-my-permissions.png" alt="Màn Quyền của tôi" />
+          <figcaption>Hình 2b — Quyền của tôi (PIN, quyền theo shop)</figcaption>
+        </figure>
+
         <h2 id="mo-ca">3. Mở ca làm việc</h2>
         <p>Trước khi bán: <strong>mở ca</strong> và chọn <strong>NV bán hàng (NV ca)</strong> để doanh thu ghi đúng người.</p>
         <ol>
           <li>Vào menu <strong>POS</strong>.</li>
-          <li>Hộp thoại «Chọn nhân viên trong ca» hiện ra → tick ít nhất một NV → <strong>Xác nhận</strong>.</li>
-          <li>Thanh trên POS hiện <em>NV ca: …</em> — lúc này mới bán được.</li>
+          <li>Hộp thoại <strong>«Chọn nhân viên trong ca»</strong> hiện ra (bắt buộc trước khi bán) → tick ít nhất một NV bán hàng → <strong>Xác nhận</strong>.</li>
+          <li>Thanh trên POS hiện <em>NV ca: …</em> (hoặc bấm <strong>Chọn NV ca</strong> để đổi NV trong ca).</li>
         </ol>
         <figure>
+          <img src="images/user-guide-staff/03-pos-chon-nv.png" alt="Hộp thoại chọn nhân viên trong ca" />
+          <figcaption>Hình 3 — Chọn NV bán hàng trong ca (doanh thu chia đều theo NV được chọn)</figcaption>
+        </figure>
+        <figure>
           <img src="images/user-guide-staff/03c-pos-sau-mo-ca.png" alt="POS sau khi mở ca" />
-          <figcaption>Hình 3 — POS sau khi mở ca (thanh «NV ca» phía trên)</figcaption>
+          <figcaption>Hình 4 — POS sau khi xác nhận ca (thanh «NV ca» phía trên)</figcaption>
         </figure>
         <div class="warn">
-          Nếu không có NV trong danh sách: báo admin thêm tại mục <strong>NV bán hàng</strong>, trạng thái <em>Đang làm</em>.
-          Không chọn NV → doanh thu không phân bổ đúng.
+          Danh sách trống: báo quản lý thêm hồ sơ tại <strong>Nhân viên bán hàng</strong>, trạng thái <em>Đang làm</em>.
+          Không chọn NV → không checkout được («Chưa chọn nhân viên ca»).
         </div>
 
         <h2 id="pos">4. Bán hàng tại POS</h2>
         <h3>4.1. Bố cục màn POS</h3>
         <ul>
-          <li><strong>Trái:</strong> quét barcode, tìm SP, duyệt lưới sản phẩm; tab nhiều hóa đơn (+).</li>
-          <li><strong>Phải:</strong> giỏ hàng, chỉnh số lượng, nút <strong>Checkout</strong>.</li>
+          <li><strong>Trái:</strong> ô <em>Quét barcode / tìm tên, mã…</em>, ô <em>Tìm tên, mã…</em>, nút <strong>Duyệt sản phẩm</strong> (lưới); tab nhiều hóa đơn (+).</li>
+          <li><strong>Phải:</strong> giỏ hàng, chỉnh số lượng, nút <strong>Checkout — … đ</strong>.</li>
           <li>Bill in tự động khi checkout (nếu máy in sẵn sàng).</li>
         </ul>
         <h3>4.2. Thêm sản phẩm</h3>
         <ol>
-          <li><strong>Quét barcode</strong> vào ô «Quét barcode…» (nhanh nhất).</li>
-          <li>Hoặc gõ tên / mã vào «Tìm tên, mã…» rồi chọn kết quả.</li>
-          <li>Hoặc bấm <strong>Duyệt SP</strong> → bấm thẻ sản phẩm trên lưới.</li>
+          <li><strong>Quét / gõ mã</strong> vào ô «Quét barcode / tìm tên, mã…» → Enter (hoặc chọn dòng kết quả).</li>
+          <li>Hoặc gõ tên / mã vào «Tìm tên, mã…» → chọn kết quả (↑↓ + Enter).</li>
+          <li>Hoặc bấm <strong>Duyệt sản phẩm</strong> → bấm thẻ trên lưới.</li>
           <li>Chỉnh số lượng bằng nút <strong>+</strong> / <strong>−</strong> trên từng dòng giỏ.</li>
           <li>Dùng tab «Hoá đơn» + nút <strong>+</strong> nếu phục vụ nhiều khách cùng lúc.</li>
         </ol>
         <figure>
           <img src="images/user-guide-staff/04-pos-duyet-sp.png" alt="Duyệt sản phẩm trên POS" />
-          <figcaption>Hình 4 — Bật «Duyệt SP» để chọn từ lưới</figcaption>
+          <figcaption>Hình 5 — Bật «Duyệt sản phẩm» để chọn từ lưới</figcaption>
         </figure>
         <figure>
           <img src="images/user-guide-staff/04b-pos-gio-hang.png" alt="Giỏ hàng có sản phẩm" />
-          <figcaption>Hình 5 — Giỏ hàng đã có món (badge số lượng trên thẻ SP; tổng trên nút Checkout)</figcaption>
+          <figcaption>Hình 6 — Giỏ hàng (tổng tiền trên nút Checkout)</figcaption>
         </figure>
         <figure>
           <img src="images/user-guide-staff/04d-pos-tim-kiem.png" alt="Tìm sản phẩm theo mã" />
-          <figcaption>Hình 6 — Tìm theo mã / tên (ví dụ MK001)</figcaption>
+          <figcaption>Hình 7 — Tìm theo tên / mã nội bộ (ví dụ LN001)</figcaption>
         </figure>
         <div class="warn">
           Badge đỏ <strong>Tồn âm</strong> / cảnh báo «Bán vượt tồn»: vẫn có thể bán theo cấu hình shop —
@@ -129,7 +173,7 @@
         <h3>4.3. Checkout</h3>
         <ol>
           <li>Kiểm tra món, số lượng, tổng tiền trên giỏ.</li>
-          <li>Bấm <strong>Checkout — … đ</strong> (hoặc <kbd>Alt</kbd>+<kbd>5</kbd>).</li>
+          <li>Bấm <strong>Checkout — … đ</strong> (mặc định <kbd>Alt</kbd>+<kbd>1</kbd> — xem mục 12).</li>
           <li>Hệ thống lưu đơn, mở cửa sổ <strong>Hóa Đơn / Receipt</strong>, đồng bộ lên máy chủ (nếu có mạng).</li>
         </ol>
 
@@ -137,15 +181,17 @@
         <p>Cửa sổ hóa đơn có hai phần: thao tác bên trái, xem trước bill bên phải.</p>
         <h3>5.1. Chọn hình thức thanh toán</h3>
         <ul>
-          <li><strong>Tiền mặt</strong> — <kbd>Alt</kbd>+<kbd>1</kbd></li>
-          <li><strong>Thẻ</strong> — <kbd>Alt</kbd>+<kbd>2</kbd></li>
-          <li><strong>Chuyển khoản</strong> — <kbd>Alt</kbd>+<kbd>3</kbd> (có thể cần chụp chứng từ theo cấu hình shop)</li>
+          <li><strong>Tiền mặt</strong> — <kbd>Alt</kbd>+<kbd>2</kbd></li>
+          <li><strong>Thẻ</strong> — <kbd>Alt</kbd>+<kbd>3</kbd></li>
+          <li><strong>Chuyển khoản</strong> — <kbd>Alt</kbd>+<kbd>4</kbd> (có thể bắt buộc chứng từ thanh toán — <kbd>Alt</kbd>+<kbd>5</kbd> trên popup)</li>
         </ul>
-        <h3>5.2. Ghi chú, GTGT, chứng từ SP</h3>
+        <h3>5.2. Ghi chú, GTGT, chứng từ</h3>
         <ul>
-          <li><strong>Ghi chú</strong> (<kbd>Alt</kbd>+<kbd>6</kbd>): lý do giảm giá, yêu cầu khách…</li>
-          <li><strong>Xuất hóa đơn GTGT</strong> (<kbd>Alt</kbd>+<kbd>5</kbd>): tick khi khách cần HĐ công ty — điền đúng MST / tên.</li>
-          <li><strong>Chụp ảnh chứng từ sản phẩm</strong> (<kbd>Alt</kbd>+<kbd>9</kbd>): khi shop yêu cầu lưu ảnh hàng.</li>
+          <li><strong>Chứng từ thanh toán</strong> (popup) — <kbd>Alt</kbd>+<kbd>5</kbd></li>
+          <li><strong>Chứng từ sản phẩm</strong> (popup) — <kbd>Alt</kbd>+<kbd>6</kbd></li>
+          <li><strong>Thông tin hóa đơn GTGT</strong> — <kbd>Alt</kbd>+<kbd>7</kbd></li>
+          <li><strong>Ghi chú đơn</strong> — <kbd>Alt</kbd>+<kbd>8</kbd></li>
+          <li>Trên màn POS (cạnh lịch sử): thư viện CT thanh toán / sản phẩm — <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>5</kbd> / <kbd>6</kbd> (Desktop có thể thêm <kbd>Alt</kbd>+<kbd>C</kbd> bật/tắt chụp camera).</li>
         </ul>
         <h3>5.3. In bill</h3>
         <p>
@@ -154,7 +200,7 @@
         </p>
         <figure>
           <img src="images/user-guide-staff/05-bill-sau-checkout.png" alt="Hóa đơn sau checkout" />
-          <figcaption>Hình 7 — Sau checkout: chọn PT thanh toán, xem trước bill, đóng bằng «Đóng» / Esc</figcaption>
+          <figcaption>Hình 8 — Sau checkout: chọn PT thanh toán, xem trước bill, đóng bằng «Đóng» / Esc</figcaption>
         </figure>
         <div class="tip">
           Toast «Đã lưu đơn hàng» / «đang đồng bộ» là bình thường. Đóng cửa sổ bằng <strong>Đóng</strong> hoặc <kbd>Esc</kbd> để bán đơn tiếp.
@@ -167,14 +213,14 @@
         </p>
         <ol>
           <li>Mở hóa đơn vừa bán (ngay sau checkout) hoặc mở lại đơn trong menu <strong>Đơn hàng</strong>.</li>
-          <li>Ở mục <strong>Đề nghị huỷ đơn</strong> (<kbd>Alt</kbd>+<kbd>4</kbd>), chọn lý do:
+          <li>Ở mục <strong>Đề nghị huỷ đơn</strong> (<kbd>Alt</kbd>+<kbd>9</kbd> trên popup hóa đơn), chọn lý do:
             <em>Khách đổi ý</em> / <em>Khách không đủ tiền</em> / <em>Khác</em> (ghi rõ).</li>
           <li>Bấm <strong>Gửi đề nghị huỷ</strong>.</li>
           <li>Theo dõi tab <strong>Đề nghị huỷ</strong> trong Đơn hàng; chờ quản lý duyệt.</li>
         </ol>
         <figure>
           <img src="images/user-guide-staff/06-de-nghi-huy.png" alt="Đề nghị hủy đơn trên hóa đơn" />
-          <figcaption>Hình 8 — Đề nghị hủy trên màn Hóa đơn (lý do + «Gửi đề nghị huỷ»)</figcaption>
+          <figcaption>Hình 9 — Đề nghị hủy trên màn Hóa đơn (lý do + «Gửi đề nghị huỷ»)</figcaption>
         </figure>
         <div class="warn">Không hủy / sửa đơn ngoài quy trình. Sai sót lớn → ghi giờ + số HĐ + báo quản lý ngay.</div>
 
@@ -190,18 +236,18 @@
         </ul>
         <figure>
           <img src="images/user-guide-staff/07-orders.png" alt="Màn đơn hàng" />
-          <figcaption>Hình 9 — Đơn hàng trong ca (tóm tắt doanh thu phía dưới)</figcaption>
+          <figcaption>Hình 10 — Đơn hàng trong ca (tóm tắt doanh thu phía dưới)</figcaption>
         </figure>
 
         <h2 id="ton-kho">8. Tồn kho &amp; sản phẩm</h2>
         <p>Xem số lượng còn và danh mục hàng. Giá vốn / một số cột nhạy cảm có thể ẩn với nhân viên.</p>
         <figure>
           <img src="images/user-guide-staff/08-inventory.png" alt="Màn tồn kho" />
-          <figcaption>Hình 10 — Tồn kho</figcaption>
+          <figcaption>Hình 11 — Tồn kho</figcaption>
         </figure>
         <figure>
           <img src="images/user-guide-staff/09-products.png" alt="Màn sản phẩm" />
-          <figcaption>Hình 11 — Danh mục sản phẩm (thường chỉ xem; chi nhánh chính mới sửa)</figcaption>
+          <figcaption>Hình 12 — Danh mục sản phẩm (thường chỉ xem)</figcaption>
         </figure>
 
         <h2 id="phieu-kho">9. Phiếu nhập / xuất</h2>
@@ -211,7 +257,7 @@
         </p>
         <figure>
           <img src="images/user-guide-staff/10-stock-requests.png" alt="Phiếu nhập xuất" />
-          <figcaption>Hình 12 — Phiếu nhập/xuất</figcaption>
+          <figcaption>Hình 13 — Phiếu nhập/xuất</figcaption>
         </figure>
 
         <h2 id="offline">10. Làm việc khi mất mạng (offline)</h2>
@@ -221,7 +267,7 @@
         </div>
         <figure>
           <img src="images/user-guide-staff/11-offline-banner.png" alt="Banner offline trên POS" />
-          <figcaption>Hình 13 — Banner offline trên POS</figcaption>
+          <figcaption>Hình 14 — Banner offline trên POS</figcaption>
         </figure>
         <div class="warn">
           Nhiều quầy offline cùng bán 1 SP có thể conflict khi sync — báo quản lý, <strong>không xóa</strong> dữ liệu trên máy.
@@ -236,26 +282,28 @@
         </ol>
         <figure>
           <img src="images/user-guide-staff/12-dashboard-dang-xuat.png" alt="Vị trí đăng xuất" />
-          <figcaption>Hình 14 — Nút «Đăng xuất» ở cuối sidebar (đóng ca kèm theo)</figcaption>
+          <figcaption>Hình 15 — Menu tài khoản (avatar) → «Đăng xuất» — đóng ca khi còn mạng</figcaption>
         </figure>
         <div class="warn">Không tắt máy giữa chừng khi còn đơn chờ đồng bộ. Hết ca → đăng xuất gọn, bàn giao quầy.</div>
 
-        <h2 id="phim-tat">12. Phím tắt thường dùng (POS / hóa đơn)</h2>
+        <h2 id="phim-tat">12. Phím tắt (mặc định — có thể đổi trong «Phím tắt chức năng»)</h2>
         <div class="kbd-box">
           <table>
             <thead>
               <tr><th>Phím</th><th>Chức năng</th></tr>
             </thead>
             <tbody>
-              <tr><td><kbd>Alt</kbd>+<kbd>5</kbd></td><td>Checkout (khi đang ở POS)</td></tr>
-              <tr><td><kbd>Alt</kbd>+<kbd>1</kbd> / <kbd>2</kbd> / <kbd>3</kbd></td><td>Tiền mặt / Thẻ / Chuyển khoản (trên hóa đơn)</td></tr>
-              <tr><td><kbd>Alt</kbd>+<kbd>4</kbd></td><td>Gửi đề nghị hủy (với lý do đã chọn)</td></tr>
-              <tr><td><kbd>Alt</kbd>+<kbd>6</kbd></td><td>Ghi chú đơn</td></tr>
-              <tr><td><kbd>Alt</kbd>+<kbd>9</kbd></td><td>Chứng từ ảnh sản phẩm</td></tr>
-              <tr><td><kbd>Esc</kbd></td><td>Đóng cửa sổ hóa đơn / hộp thoại</td></tr>
+              <tr><td><kbd>Alt</kbd>+<kbd>1</kbd></td><td>Checkout (màn POS, giỏ có hàng)</td></tr>
+              <tr><td><kbd>Alt</kbd>+<kbd>2</kbd> / <kbd>3</kbd> / <kbd>4</kbd></td><td>Tiền mặt / Thẻ / Chuyển khoản (popup hóa đơn)</td></tr>
+              <tr><td><kbd>Alt</kbd>+<kbd>5</kbd> / <kbd>6</kbd></td><td>Chứng từ thanh toán / sản phẩm (popup)</td></tr>
+              <tr><td><kbd>Alt</kbd>+<kbd>7</kbd> / <kbd>8</kbd></td><td>Thông tin GTGT / Ghi chú đơn (popup)</td></tr>
+              <tr><td><kbd>Alt</kbd>+<kbd>9</kbd></td><td>Huỷ / gửi đề nghị huỷ (popup, đã chọn lý do)</td></tr>
+              <tr><td><kbd>Tab</kbd></td><td>Luân phiên ô quét barcode ↔ số lượng dòng mới nhất (màn POS)</td></tr>
+              <tr><td><kbd>Esc</kbd></td><td>Đóng popup hóa đơn / hộp thoại</td></tr>
             </tbody>
           </table>
         </div>
+        <p class="tip">Desktop: <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> mở cửa sổ POS phụ (nếu shop cấu hình). Chi tiết đầy đủ trong menu avatar → <strong>Phím tắt chức năng</strong>.</p>
 
         <h2 id="nhieu-quay">13. Nhiều quầy cùng lúc</h2>
         <ul>
@@ -277,7 +325,8 @@
             <tr><td>In bill không ra</td><td>Máy in, giấy, USB; dùng in lại trên hóa đơn / Đơn hàng</td></tr>
             <tr><td>Banner offline / chờ sync</td><td>Giữ máy bật đến khi sync xong</td></tr>
             <tr><td>Conflict khi sync</td><td>Báo quản lý xử lý — không xóa DB local</td></tr>
-            <tr><td>Thiết bị chưa duyệt</td><td>Báo admin duyệt thiết bị</td></tr>
+            <tr><td>Thiết bị chưa duyệt</td><td>Màn «Thiết bị chờ duyệt» — báo quản lý duyệt máy quầy; không tự xóa dữ liệu</td></tr>
+            <tr><td>PIN máy / quên PIN</td><td>Quên PIN → yêu cầu trên dialog; quản lý duyệt tại Nhân viên bán hàng</td></tr>
             <tr><td>Đề nghị hủy chưa duyệt</td><td>Nhắc quản lý; không bán lại cùng logic «xóa tay»</td></tr>
           </tbody>
         </table>
@@ -294,7 +343,7 @@
         </ol>
 
         <div class="footer">
-          VietPOS — Hướng dẫn nhân viên v1.2 · Ảnh minh họa từ môi trường demo.
+          VietPOS — Hướng dẫn nhân viên v1.4 · Ảnh POS 14/10/2026. Chụp lại: <code>HDSD-VietPOS/scripts</code> → <code>pnpm run capture:staff</code>.
           Cấu hình máy in / tài khoản / quyền do quản lý cửa hàng cung cấp.
         </div>
       </article>

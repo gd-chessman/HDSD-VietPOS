@@ -1,0 +1,16 @@
+{
+  "name": "@vietpos/hdsd-capture",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "capture:staff": "node ./capture-staff-guide.mjs",
+    "capture:widget": "node ./capture-widget-guide.mjs",
+    "capture:warehouse": "node ./capture-warehouse-guide.mjs",
+    "capture:manager": "node ./capture-manager-guide.mjs",
+    "capture:accountant": "node ./capture-accountant-guide.mjs",
+    "capture:all": "node ./capture-staff-guide.mjs && node ./capture-warehouse-guide.mjs && node ./capture-manager-guide.mjs && node ./capture-accountant-guide.mjs && node ./capture-widget-guide.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.52.0"
+  }
+}

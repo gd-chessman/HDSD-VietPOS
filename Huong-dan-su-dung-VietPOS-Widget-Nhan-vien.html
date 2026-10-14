@@ -18,6 +18,8 @@
       <p class="sidebar-label">Tài liệu</p>
       <nav class="guides">
         <a href="Huong-dan-su-dung-VietPOS-Nhan-vien.html">Nhân viên bán hàng</a>
+        <a href="Huong-dan-su-dung-VietPOS-Quan-ly.html">Quản lý</a>
+        <a href="Huong-dan-su-dung-VietPOS-Ke-toan.html">Kế toán</a>
         <a href="Huong-dan-su-dung-VietPOS-Thu-kho.html">Thủ kho</a>
         <a href="Huong-dan-su-dung-VietPOS-Widget.html">Widget (chọn trang)</a>
         <a href="Huong-dan-su-dung-VietPOS-Widget-Quan-tri.html">Widget · Quản trị</a>
@@ -27,14 +29,15 @@
       <nav class="toc">
         <a href="#gioi-thieu">1. Dành cho ai</a>
         <a href="#chuan-bi">2. Cài app &amp; Wi‑Fi</a>
-        <a href="#vao-nhan-vien">3. Vào màn Nhân viên</a>
-        <a href="#chon-quay">4. Chọn quầy LAN</a>
-        <a href="#ma-ghep">5. Mã ghép 6 số</a>
-        <a href="#pin">6. PIN 4 số</a>
-        <a href="#da-ghep">7. Đã liên kết quầy</a>
-        <a href="#chung-tu-ck">8. Chụp chứng từ CK</a>
-        <a href="#dang-xuat">9. Đăng xuất</a>
-        <a href="#su-co">10. Sự cố</a>
+        <a href="#quay-desktop">3. Thiết lập trên quầy</a>
+        <a href="#vao-nhan-vien">4. Vào màn Nhân viên (app)</a>
+        <a href="#chon-quay">5. Chọn quầy LAN</a>
+        <a href="#ma-ghep">6. Mã ghép 6 số</a>
+        <a href="#pin">7. PIN 4 số</a>
+        <a href="#da-ghep">8. Đã liên kết quầy</a>
+        <a href="#chung-tu-ck">9. Chụp chứng từ CK</a>
+        <a href="#dang-xuat">10. Đăng xuất</a>
+        <a href="#su-co">11. Sự cố</a>
       </nav>
     </aside>
 
@@ -42,7 +45,7 @@
       <article class="article">
         <h1 id="gioi-thieu">Widget Android — Ghép quầy (nhân viên)</h1>
         <p class="cover-sub"><strong>Nhân viên bán hàng</strong> · tablet cùng Wi‑Fi với <strong>VietPOS Desktop</strong> · mã ghép + PIN</p>
-        <p class="meta">HDSD v1.2 · App 0.2.0 · 14/10/2026</p>
+        <p class="meta">HDSD v1.4 · App 0.2.0 · Khớp Shop-Manager (QuyLV) · 14/10/2026</p>
 
         <div class="box">
           Trang này <strong>chỉ</strong> ghép quầy LAN và chụp CK. Widget tổng quan / thông báo đơn admin →
@@ -50,50 +53,83 @@
           Bán hàng trên quầy → <a href="Huong-dan-su-dung-VietPOS-Nhan-vien.html">Nhân viên bán hàng (POS)</a>.
         </div>
 
-        <div class="warn">Không cần đăng nhập <strong>Quản trị</strong> (super_admin) để ghép quầy. Quầy phải có staff <strong>đang đăng nhập</strong> trên Desktop.</div>
+        <div class="warn">
+          Ghép quầy chỉ khi Desktop đang đăng nhập <strong>tài khoản nhân viên (staff)</strong> — không ghép khi quầy đang login admin/quản lý.
+          Nhân viên phải đã <strong>đặt PIN 4 số trên máy quầy</strong> (lần đăng nhập staff đầu tiên).
+        </div>
 
         <h2 id="chuan-bi">2. Cài app &amp; Wi‑Fi</h2>
         <ol>
-          <li>Cài APK <strong>VietPOS Widget</strong>.</li>
-          <li>Tablet và máy quầy <strong>cùng Wi‑Fi</strong> (LAN nội bộ).</li>
-          <li>Mở <strong>VietPOS Desktop</strong> trên quầy; staff đã login POS.</li>
+          <li>Cài APK <strong>VietPOS Widget</strong> trên tablet/điện thoại.</li>
+          <li>Thiết bị và máy quầy <strong>cùng Wi‑Fi</strong> (LAN nội bộ).</li>
+          <li>Chức năng LAN + chụp CK: chỉ <strong>VietPOS Desktop</strong> (Tauri), không dùng POS trên trình duyệt.</li>
         </ol>
 
-        <h2 id="vao-nhan-vien">3. Vào màn Nhân viên</h2>
+        <h2 id="quay-desktop">3. Thiết lập trên quầy (Desktop)</h2>
+        <ol>
+          <li>Đăng nhập POS bằng tài khoản <strong>staff</strong> (nhân viên bán hàng).</li>
+          <li>Menu → <strong>Thiết bị LAN</strong> → tab <strong>Điện thoại</strong>.</li>
+          <li>Bấm <strong>Bật liên kết</strong> (liên kết app VietPOS Widget). Mã 6 số hiện trên quầy (~2 phút); có thể sao chép mã.</li>
+          <li>Danh sách điện thoại «Đang mở app Widget» khi tablet mở app cùng mạng.</li>
+          <li>Chụp CK từ điện thoại: <strong>Cài đặt camera</strong> → nguồn <strong>Camera điện thoại (Widget)</strong> (thay cho webcam quầy).</li>
+        </ol>
+        <div class="tip">Có thể tắt liên kết trên quầy khi không ghép thiết bị. Trạng thái bật/tắt được lưu trên máy quầy.</div>
+
+        <h2 id="vao-nhan-vien">4. Vào màn Nhân viên (app Widget)</h2>
         <ul>
           <li>Màn đầu → <strong>Nhân viên</strong>.</li>
           <li>Hoặc menu <strong>≡</strong> → <strong>Nhân viên</strong>.</li>
         </ul>
+        <figure>
+          <img src="images/user-guide-widget/01-widget-entry.png" alt="Màn chọn Nhân viên trên app Widget" />
+          <figcaption>Hình 1 — Chọn «Nhân viên» (minh họa giao diện app)</figcaption>
+        </figure>
 
-        <h2 id="chon-quay">4. Chọn máy quầy (LAN)</h2>
+        <h2 id="chon-quay">5. Chọn máy quầy (LAN)</h2>
         <p>App liệt kê quầy trên mạng. Chạm một máy để tiếp tục.</p>
         <p>Không thấy → <strong>Quét lại mạng quầy</strong>; kiểm tra Wi‑Fi, quầy đang mở, firewall.</p>
+        <figure>
+          <img src="images/user-guide-widget/02-widget-chon-quay.png" alt="Danh sách máy quầy LAN" />
+          <figcaption>Hình 2 — Chọn máy quầy trên cùng Wi‑Fi</figcaption>
+        </figure>
 
-        <h2 id="ma-ghep">5. Mã ghép 6 số</h2>
+        <h2 id="ma-ghep">6. Mã ghép 6 số</h2>
         <ol>
-          <li>Trên <strong>Desktop</strong>: bật liên kết (Thiết bị LAN → Điện thoại / widget).</li>
-          <li>App: <strong>Yêu cầu quầy sinh mã</strong> → quầy hiện <strong>6 số</strong> trên màn hình quầy.</li>
-          <li>Nhập 6 số → <strong>Xác nhận mã ghép</strong>. Sai → app xóa ô; <strong>Yêu cầu mã mới</strong> nếu cần.</li>
+          <li>Quầy đã <strong>bật liên kết</strong> (mục 3).</li>
+          <li>Trên app: <strong>Yêu cầu quầy sinh mã</strong> → quầy hiện <strong>6 số</strong> (tab Thiết bị LAN hoặc tự đồng bộ).</li>
+          <li>Nhập 6 số → <strong>Xác nhận mã ghép</strong>. Sai → app xóa ô; <strong>Yêu cầu mã mới</strong> (cooldown ~1 phút trên quầy).</li>
         </ol>
+        <figure>
+          <img src="images/user-guide-widget/03-widget-ma-ghep.png" alt="Nhập mã ghép 6 số" />
+          <figcaption>Hình 3 — Nhập mã 6 số hiển thị trên quầy</figcaption>
+        </figure>
 
-        <h2 id="pin">6. PIN nhân viên 4 số</h2>
+        <h2 id="pin">7. PIN nhân viên 4 số</h2>
         <ol>
           <li>Nhập PIN giống lúc đăng nhập staff trên quầy.</li>
           <li><strong>Kết nối quầy</strong>. PIN sai → app xóa ô PIN.</li>
         </ol>
+        <figure>
+          <img src="images/user-guide-widget/04-widget-pin.png" alt="Nhập PIN nhân viên trên Widget" />
+          <figcaption>Hình 4 — PIN 4 số trùng PIN trên máy quầy</figcaption>
+        </figure>
 
-        <h2 id="da-ghep">7. Đã liên kết quầy</h2>
+        <h2 id="da-ghep">8. Đã liên kết quầy</h2>
         <p>Màn hiện tên nhân viên, quầy, thời gian ghép. Thoát app vẫn giữ liên kết.</p>
+        <figure>
+          <img src="images/user-guide-widget/05-widget-da-ghep.png" alt="Màn đã ghép quầy" />
+          <figcaption>Hình 5 — Đã liên kết quầy (có thể «Ghép lại quầy khác»)</figcaption>
+        </figure>
         <p>Quầy đăng xuất → app yêu cầu <strong>nhập lại PIN</strong>.</p>
         <p>Đổi quầy / NV: <strong>Ghép lại quầy khác</strong>.</p>
 
-        <h2 id="chung-tu-ck">8. Chụp chứng từ chuyển khoản</h2>
-        <p>Sau khi ghép xong. Quầy gửi lệnh → app mở <strong>camera</strong> (cấp quyền) → gửi ảnh về quầy; có thể lưu <code>Pictures/VietPOS</code>.</p>
+        <h2 id="chung-tu-ck">9. Chụp chứng từ chuyển khoản</h2>
+        <p>Sau ghép + PIN. Quầy chọn nguồn camera Widget (mục 3) → khi checkout CK, quầy gửi lệnh → app mở <strong>camera</strong> → ảnh về quầy; có thể lưu <code>Pictures/VietPOS</code>.</p>
 
-        <h2 id="dang-xuat">9. Đăng xuất</h2>
-        <p>Menu ≡ → <strong>Đăng xuất</strong> hủy ghép quầy (và cả phiên quản trị nếu có). Cần ghép lại từ bước 4.</p>
+        <h2 id="dang-xuat">10. Đăng xuất</h2>
+        <p>Menu ≡ → <strong>Đăng xuất</strong> hủy ghép quầy (và cả phiên quản trị nếu có). Cần ghép lại từ bước 5. Đăng xuất trên quầy cũng thu hồi phiên widget trên điện thoại.</p>
 
-        <h2 id="su-co">10. Sự cố</h2>
+        <h2 id="su-co">11. Sự cố</h2>
         <table>
           <thead>
             <tr><th>Triệu chứng</th><th>Xử lý</th></tr>
@@ -112,14 +148,27 @@
               <td>Staff login trên quầy trước.</td>
             </tr>
             <tr>
+              <td>Chỉ ghép khi quầy đang đăng nhập nhân viên</td>
+              <td>Đăng xuất admin/manager → login lại bằng <strong>staff</strong>.</td>
+            </tr>
+            <tr>
+              <td>Chưa đặt PIN trên máy quầy</td>
+              <td>Staff đăng nhập Desktop và thiết lập PIN 4 số trên quầy.</td>
+            </tr>
+            <tr>
+              <td>PIN nhân viên không đúng</td>
+              <td>Nhập lại (app xóa ô); PIN phải trùng PIN đã lưu trên quầy.</td>
+            </tr>
+            <tr>
               <td>Không chụp được CK</td>
-              <td>Đã ghép + PIN; bật camera; app Widget đang chạy nền.</td>
+              <td>Đã ghép + PIN; Cài đặt camera = Widget; bật quyền camera; app mở/nền.</td>
             </tr>
           </tbody>
         </table>
 
+        <div class="tip">Ảnh app: minh họa bám nhãn APK 0.2.0 (chụp lại từ tablet: <code>pnpm run capture:widget</code> hoặc chụp tay). Phần quầy Desktop: Thiết bị LAN chỉ trên app Tauri.</div>
         <div class="footer">
-          VietPOS — Widget · Ghép quầy v1.2 · App 0.2.0.
+          VietPOS — Widget · Ghép quầy v1.4 · App 0.2.0 · Shop-Manager QuyLV.
         </div>
       </article>
     </main>

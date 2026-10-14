@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hướng dẫn VietPOS — Quản lý</title>
+  <link rel="stylesheet" href="assets/guide.css" />
+</head>
+<body>
+  <header class="topbar">
+    <button class="toc-toggle" type="button">Mục lục</button>
+    <a class="brand" href="index.html"><span class="mark">V</span> VietPOS HDSD</a>
+    <span class="role">Quản lý</span>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <p class="sidebar-label">Tài liệu</p>
+      <nav class="guides">
+        <a href="Huong-dan-su-dung-VietPOS-Nhan-vien.html">Nhân viên bán hàng</a>
+        <a class="active" href="Huong-dan-su-dung-VietPOS-Quan-ly.html">Quản lý</a>
+        <a href="Huong-dan-su-dung-VietPOS-Ke-toan.html">Kế toán</a>
+        <a href="Huong-dan-su-dung-VietPOS-Thu-kho.html">Thủ kho</a>
+        <a href="Huong-dan-su-dung-VietPOS-Widget.html">Widget (chọn trang)</a>
+        <a href="Huong-dan-su-dung-VietPOS-Widget-Quan-tri.html">Widget · Quản trị</a>
+        <a href="Huong-dan-su-dung-VietPOS-Widget-Nhan-vien.html">Widget · Ghép quầy</a>
+      </nav>
+      <p class="sidebar-label">Mục lục</p>
+      <nav class="toc">
+        <a href="#dang-nhap">1. Đăng nhập</a>
+        <a href="#ma-pin">1b. Mã PIN</a>
+        <a href="#menu">2. Menu quản lý</a>
+        <a href="#quyen-cua-toi">2b. Quyền của tôi</a>
+        <a href="#dashboard">3. Dashboard</a>
+        <a href="#nhan-su">4. NV bán hàng &amp; quên PIN</a>
+        <a href="#don-hang">5. Đơn hàng &amp; hủy đơn</a>
+        <a href="#vat-xuat">6. Hoá đơn xuất VAT</a>
+        <a href="#kho">7. Kho &amp; phiếu</a>
+        <a href="#pos">8. POS (khi cần)</a>
+        <a href="#su-co">9. Sự cố</a>
+        <a href="#quy-tac">10. Quy tắc</a>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <article class="article">
+        <h1>Hướng dẫn sử dụng VietPOS</h1>
+        <p class="cover-sub">Dành cho <strong>quản lý cửa hàng</strong> (manager)</p>
+        <p class="meta">Phiên bản 1.4 · 14/10/2026 · Khớp POS QuyLV · Ảnh demo manager2.local</p>
+
+        <div class="box">
+          Quản lý: giám sát bán hàng, <strong>duyệt đề nghị hủy</strong>, xử lý <strong>hoá đơn VAT</strong>,
+          <strong>phiếu kho</strong>, quản lý <strong>NV bán hàng</strong> và <strong>quên mã PIN</strong>. Có thể dùng POS khi cần hỗ trợ quầy.
+        </div>
+
+        <h2 id="dang-nhap">1. Đăng nhập</h2>
+        <ol>
+          <li>Mở VietPOS (Desktop hoặc trình duyệt).</li>
+          <li>Email / mật khẩu do admin cấp → <strong>Đăng nhập</strong>.</li>
+        </ol>
+        <figure>
+          <img src="images/user-guide-manager/01-login.png" alt="Đăng nhập quản lý" />
+          <figcaption>Hình 1 — Đăng nhập</figcaption>
+        </figure>
+
+        <h3 id="ma-pin">1b. Mã PIN 4 số</h3>
+        <p>Sau email/mật khẩu → nhập <strong>PIN 4 số</strong>. Sai nhiều lần → khóa 5 phút. Quên PIN → «Quên mã PIN?» (cần mạng); admin shop duyệt tại <strong>Nhân viên bán hàng</strong>.</p>
+        <figure>
+          <img src="images/user-guide-manager/01b-pin-nhap.png" alt="PIN quản lý" />
+          <figcaption>Hình 1b — Xác nhận PIN</figcaption>
+        </figure>
+
+        <h2 id="menu">2. Menu quản lý</h2>
+        <p>Sidebar theo nhóm (tùy shop / HUB):</p>
+        <ul>
+          <li><strong>Tổng quan:</strong> Dashboard, Góp ý khách hàng (và Thống kê / Dashboard chuỗi nếu được cấp)</li>
+          <li><strong>Bán hàng:</strong> POS, Đơn hàng, Hoá đơn xuất VAT</li>
+          <li><strong>Kho hàng:</strong> Sản phẩm, Tồn kho, Phiếu nhập/xuất; tại HUB: Đặt hàng, Nhà cung cấp, Hoá đơn nhập VAT</li>
+          <li><strong>Nhân sự:</strong> Nhân viên, Nhân viên bán hàng, Báo cáo nhân viên</li>
+          <li><strong>Hệ thống:</strong> Quyền của tôi, Thư viện ảnh (nếu bật)</li>
+        </ul>
+        <figure>
+          <img src="images/user-guide-manager/02-dashboard.png" alt="Dashboard quản lý" />
+          <figcaption>Hình 2 — Dashboard (menu đầy đủ hơn nhân viên quầy)</figcaption>
+        </figure>
+
+        <h3 id="quyen-cua-toi">2b. Quyền của tôi</h3>
+        <figure>
+          <img src="images/user-guide-manager/02b-my-permissions.png" alt="Quyền của tôi" />
+          <figcaption>Hình 2b — Quyền được gán, PIN, đổi PIN</figcaption>
+        </figure>
+
+        <h2 id="dashboard">3. Dashboard</h2>
+        <p>Theo dõi doanh thu, đơn, cảnh báo tồn. Chi tiết bán hàng → <strong>Đơn hàng</strong> hoặc POS.</p>
+
+        <h2 id="nhan-su">4. Nhân viên bán hàng &amp; quên PIN</h2>
+        <p>Menu <strong>Nhân viên bán hàng</strong>: hồ sơ NV ca, trạng thái «Đang làm».</p>
+        <p>Khung <strong>Yêu cầu quên mã PIN</strong>: duyệt «Để họ tự đặt» hoặc «Đặt PIN giúp» cho staff / quản lý / admin shop.</p>
+        <figure>
+          <img src="images/user-guide-manager/03-sales-staff.png" alt="NV bán hàng" />
+          <figcaption>Hình 3 — Nhân viên bán hàng (kèm yêu cầu quên PIN nếu có)</figcaption>
+        </figure>
+
+        <h2 id="don-hang">5. Đơn hàng &amp; hủy đơn</h2>
+        <p><strong>Đơn hàng</strong>: xem đơn theo ngày / ca, in lại bill, ghi chú. Tab <strong>Đề nghị huỷ</strong>: duyệt hoặc từ chối yêu cầu hủy từ quầy.</p>
+        <figure>
+          <img src="images/user-guide-manager/04-orders.png" alt="Đơn hàng" />
+          <figcaption>Hình 4 — Đơn hàng &amp; xử lý đề nghị hủy</figcaption>
+        </figure>
+
+        <h2 id="vat-xuat">6. Hoá đơn xuất VAT</h2>
+        <p>Menu <strong>Hoá đơn xuất VAT</strong>: hàng đợi xuất HĐ GTGT cho đơn đã bán — phối hợp kế toán.</p>
+        <figure>
+          <img src="images/user-guide-manager/05-vat-invoices.png" alt="Hoá đơn xuất VAT" />
+          <figcaption>Hình 5 — Hoá đơn xuất VAT</figcaption>
+        </figure>
+
+        <h2 id="kho">7. Kho &amp; phiếu nhập/xuất</h2>
+        <p>Quản lý thường <strong>duyệt / từ chối</strong> phiếu, bấm <strong>Vận chuyển</strong> (bên gửi), theo dõi tồn. Chi tiết luồng kho → xem thêm <a href="Huong-dan-su-dung-VietPOS-Thu-kho.html">Hướng dẫn thủ kho</a>.</p>
+        <figure>
+          <img src="images/user-guide-manager/06-stock-requests.png" alt="Phiếu kho" />
+          <figcaption>Hình 6 — Phiếu nhập/xuất (badge chờ duyệt trên menu)</figcaption>
+        </figure>
+        <figure>
+          <img src="images/user-guide-manager/07-inventory.png" alt="Tồn kho" />
+          <figcaption>Hình 7 — Tồn kho (giám sát sắp hết)</figcaption>
+        </figure>
+
+        <h2 id="pos">8. POS (khi cần hỗ trợ quầy)</h2>
+        <p>Quản lý <strong>được dùng POS</strong> như nhân viên (mở ca, bán, checkout). Quy trình chi tiết → <a href="Huong-dan-su-dung-VietPOS-Nhan-vien.html">Hướng dẫn nhân viên</a>.</p>
+
+        <h2 id="su-co">9. Sự cố thường gặp</h2>
+        <table>
+          <thead><tr><th>Hiện tượng</th><th>Việc nên làm</th></tr></thead>
+          <tbody>
+            <tr><td>Không duyệt được phiếu</td><td>Kiểm tra đúng vai «bên gửi / bên nhận» theo loại phiếu</td></tr>
+            <tr><td>NV quên PIN</td><td>Nhân viên bán hàng → Yêu cầu quên mã PIN</td></tr>
+            <tr><td>Đề nghị hủy treo</td><td>Đơn hàng → tab Đề nghị huỷ → duyệt / từ chối</td></tr>
+            <tr><td>Thiết bị chưa duyệt</td><td>Báo admin shop duyệt máy</td></tr>
+          </tbody>
+        </table>
+
+        <h2 id="quy-tac">10. Quy tắc gọn</h2>
+        <ol>
+          <li>Ưu tiên xử lý đề nghị hủy và phiếu chờ trong ngày.</li>
+          <li>Duyệt PIN reset chỉ sau khi xác minh danh tính NV.</li>
+          <li>Không chia sẻ PIN / mật khẩu quản lý.</li>
+        </ol>
+        <figure>
+          <img src="images/user-guide-manager/08-dang-xuat.png" alt="Đăng xuất" />
+          <figcaption>Hình 8 — Avatar → Đăng xuất</figcaption>
+        </figure>
+
+        <div class="footer">
+          VietPOS — Quản lý v1.4 · Chụp lại: <code>pnpm run capture:manager</code> (env <code>MANAGER_EMAIL</code>).
+        </div>
+      </article>
+    </main>
+  </div>
+  <script src="assets/guide.js"></script>
+</body>
+</html>
